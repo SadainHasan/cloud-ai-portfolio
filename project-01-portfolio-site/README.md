@@ -1,6 +1,6 @@
 # Project 01 — Cloud Portfolio Website
 
-**Author:** Hasan
+**Author:** Khandaker Sadain Hasan
 **MSc Cloud Computing** — University of Leicester (2020–2022)
 
 Cloud portfolio of Hasan — building toward AWS SAA, AZ-104, and CSAP.
