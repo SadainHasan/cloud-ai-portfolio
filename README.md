@@ -33,7 +33,7 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 
 | # | Project | Services | Status |
 |---|---|---|---|
-| 01 | Static Portfolio Website | S3, CloudFront, Route53 | Live |
+| 01 | Static Portfolio Website | S3, CloudFront, Route53 | In progress |
 | 02 | EC2 Auto-Scaling Web Server | EC2, ALB, ASG, EBS | In progress |
 | 03 | Custom VPC Network | VPC, Subnets, NAT, IGW | In progress |
 
