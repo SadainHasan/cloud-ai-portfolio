@@ -1,4 +1,4 @@
-# Cloud + AI Automation Portfolio
+# ☁️ Cloud + AI Automation Portfolio
 
 **Khandaker Sadain Hasan** | Leicester, UK
 MSc Cloud Computing — University of Leicester
@@ -20,24 +20,36 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 ## Certifications In Progress
 
 | Certification | Target Date | Status |
-|---|---|---|
-| AWS Cloud Practitioner | Jan 2022 | Expired Jan 2025 |
-| AWS SAA (SAA-C03) | October 2026 | In progress |
-| AZ-104 Azure Administrator | January 2027 | Planned |
-| AWS CSAP | April 2027 | Planned |
-| Terraform Associate | May 2027 | Planned |
+| --- | --- | --- |
+| AWS Cloud Practitioner | Jan 2022 | ✅ Completed (Expired Jan 2025) |
+| AWS SAA (SAA-C03) | October 2026 | 🔄 In Progress |
+| AZ-104 Azure Administrator | January 2027 | ⏳ Planned |
+| AWS CSAP | April 2027 | ⏳ Planned |
+| Terraform Associate | May 2027 | ⏳ Planned |
 
 ---
 
 ## Projects
 
 | # | Project | Services | Status |
-|---|---|---|---|
-| 01 | Static Portfolio Website | S3, CloudFront, Route53 | In progress |
-| 02 | EC2 Auto-Scaling Web Server | EC2, ALB, ASG, EBS | In progress |
-| 03 | Custom VPC Network | VPC, Subnets, NAT, IGW | In progress |
+| --- | --- | --- | --- |
+| 01 | Static Portfolio Website | S3, CloudFront, Route53 | 🔄 In Progress |
+| 02 | EC2 Auto-Scaling Web Server | EC2, ALB, ASG, EBS | 🔄 In Progress |
+| 03 | Custom VPC Network | VPC, Subnets, NAT, IGW | 🔄 In Progress |
 
 *(Projects added weekly as the plan progresses)*
+
+---
+
+## 📝 Notes & Learning
+
+Study notes and reference guides built during the 24-month roadmap.
+
+| File | Topic | Description |
+| --- | --- | --- |
+| [prompting-notes.md](./prompting-notes.md) | AI Prompt Engineering | 5 core prompting techniques with real SME examples — Direct, Role-Based, Chain-of-Thought, Format-Specific, Iterative Refinement |
+
+*(Notes added weekly — covering AWS, Azure, Python, Terraform, AI Automation)*
 
 ---
 
