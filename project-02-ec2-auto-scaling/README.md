@@ -45,7 +45,7 @@ Instance Connect directly in the browser.
 - [x] Created key pair (my-keypair.pem)
 - [x] Connected via EC2 Instance Connect
 - [x] Verified instance running (2/2 status checks passed)
-- [ ] Create AMI from instance
+- [x] Create AMI from instance (my-first-ami — 06 May 2026)
 - [ ] Set up Auto Scaling Group
 - [ ] Attach Application Load Balancer
 
