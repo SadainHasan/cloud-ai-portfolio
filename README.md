@@ -38,6 +38,14 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 | 03 | Custom VPC Network | VPC, Subnets, NAT, IGW | 🔄 In Progress |
 
 *(Projects added weekly as the plan progresses)*
+---
+
+## Study Log
+
+Daily learning evidence — topics studied, projects built, 
+and progress tracked throughout the 104-week plan.
+
+📖 [View Study Log](study-log.md)
 
 ---
 
