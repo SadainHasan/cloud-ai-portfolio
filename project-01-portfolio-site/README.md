@@ -3,7 +3,7 @@
 **Author:** Khandaker Sadain Hasan  
 **Location:** Leicester, UK  
 **Date started:** 01 May 2026  
-**Status:** ✅ Live
+**Status:** 🔄 In progress
 
 ---
 
@@ -50,19 +50,19 @@ the financial services sector in Bangladesh.
 A professional cloud portfolio website hosted entirely on AWS using 
 S3 for static file storage and CloudFront as a global CDN.
 
-No web servers. No maintenance. Costs approximately £1 per month.
-Serves content from 450+ edge locations worldwide.
+No web servers. No maintenance. Estimated cost approximately £1 per month.
 
 ---
 
-## Architecture
+## Planned Architecture
 [User] → [Route 53 DNS] → [CloudFront CDN] → [S3 Bucket]
 ↑
 [ACM SSL Certificate]
 (free HTTPS via AWS)
+
 ---
 
-## AWS Services Used
+## AWS Services Planned
 
 | Service | Purpose |
 |---|---|
@@ -71,6 +71,19 @@ Serves content from 450+ edge locations worldwide.
 | Amazon Route 53 | DNS management — routes domain to CloudFront |
 | AWS Certificate Manager | Free SSL/TLS certificate for HTTPS |
 | Origin Access Control | Restricts S3 access to CloudFront only |
+
+---
+
+## Steps
+
+- [ ] Create S3 bucket and enable static website hosting
+- [ ] Upload index.html portfolio page
+- [ ] Create CloudFront distribution pointing to S3
+- [ ] Configure Origin Access Control (OAC) to secure S3
+- [ ] Apply S3 bucket policy allowing only CloudFront access
+- [ ] Verify HTTPS working via CloudFront URL
+- [ ] Connect custom domain via Route 53
+- [ ] Add AWS Certificate Manager SSL for custom domain
 
 ---
 
@@ -86,42 +99,11 @@ This architecture:
 - **Reliability:** CloudFront has 99.99% SLA
 - **SSL:** free and auto-renewed via AWS Certificate Manager
 
-This is the same architecture used by enterprise websites serving 
-millions of users — scaled down to a portfolio site.
-
 ---
 
-## Steps Completed
+## Planned Cost Breakdown
 
-- [x] Created S3 bucket with static website hosting enabled
-- [x] Uploaded index.html portfolio page
-- [x] Created CloudFront distribution pointing to S3
-- [x] Configured Origin Access Control (OAC) to secure S3
-- [x] Applied S3 bucket policy allowing only CloudFront access
-- [x] Verified HTTPS working via CloudFront URL
-- [ ] Connect custom domain via Route 53
-- [ ] Add AWS Certificate Manager SSL for custom domain
-
----
-
-## Key Things I Learned
-
-- CloudFront caches content at edge locations near users — 
-  reduces latency and S3 data transfer costs
-- Origin Access Control (OAC) prevents users bypassing CloudFront
-  to access S3 directly — security best practice
-- ACM certificates for CloudFront must be created in us-east-1 
-  (N. Virginia) even if your origin is in another region
-- Static website hosting on S3 does NOT support HTTPS directly — 
-  CloudFront is required for HTTPS on S3-hosted sites
-- TTL (Time To Live) controls how long CloudFront caches content — 
-  create an invalidation to force immediate cache refresh
-
----
-
-## Cost Breakdown
-
-| Service | Monthly Cost |
+| Service | Estimated Monthly Cost |
 |---|---|
 | S3 storage (under 1GB) | ~$0.02 |
 | CloudFront (under 1GB transfer) | ~$0.09 |
