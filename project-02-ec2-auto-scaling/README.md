@@ -21,9 +21,28 @@ Instance Connect directly in the browser.
 
 ---
 
-## Architecture (planned)
+## Architecture
 
-[User] → [Application Load Balancer] → [Auto Scaling Group] → [EC2 Instances]
+![Architecture Diagram](project-02-architecture.png)
+
+### Flow explanation
+
+| Step | What happens |
+|---|---|
+| 1 | User request arrives from the internet |
+| 2 | Application Load Balancer receives the request on port 443 (HTTPS) |
+| 3 | ALB checks health of all registered EC2 instances |
+| 4 | ALB routes request to a healthy EC2 instance |
+| 5 | EC2 instance processes the request and returns a response |
+| 6 | If traffic increases, Auto Scaling Group launches new EC2 instances automatically |
+| 7 | If traffic decreases, Auto Scaling Group terminates excess instances |
+
+### Why this architecture?
+
+- **High availability:** ALB distributes traffic across multiple EC2 instances
+- **Fault tolerant:** if one EC2 instance fails, ALB stops sending it traffic
+- **Auto scaling:** ASG launches new instances when CPU exceeds target threshold
+- **Cost efficient:** ASG terminates instances when traffic drops — pay only for what you use
 
 ---
 
