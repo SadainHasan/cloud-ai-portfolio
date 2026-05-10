@@ -142,7 +142,7 @@ and portfolio-building programme.
 - Practised all 5 Claude prompt techniques in claude.ai
 - Set up Claude Project with full background context
 - Used Claude to generate Anki cards on Auto Scaling
-- Added Cards 14-18 covering ASG and ELB topics
+- Added Cards 14-19 covering ASG and ELB topics
 - Decided to delay Claude API to Week 10 
   (API requires payment — not needed for learning stage)
 - Added study-log.md to GitHub (this file)
@@ -150,7 +150,7 @@ and portfolio-building programme.
 **What I built:**
 - Claude Project: AWS SAA Study (persistent context across chats)
 - study-log.md on GitHub (this file)
-- Anki cards 14-18 on Auto Scaling and Load Balancing
+- Anki cards 14-19 on Auto Scaling and Load Balancing
 
 **Key things learned:**
 - Claude role-based prompts using banking background produce 
@@ -169,6 +169,40 @@ and portfolio-building programme.
 
 ---
 
+### Day 6 — Tuesday 06 May 2026
+
+**Topic studied:** AMI deep dive, EBS Snapshots, ELB introduction
+
+**What I did:**
+- Read DCT training notes: AMI pp.13-14, EBS Snapshots pp.31-37, 
+  ELB pp.38-43
+- Created first custom AMI (my-first-ami) from EC2 instance
+- Created first EBS Snapshot from 8GB root volume
+- Explored ELB console — reviewed all 4 load balancer types
+- Added 5 Anki cards on AMI, snapshots, and ELB
+
+**What I built:**
+- Custom AMI: my-first-ami (Amazon Linux 2023, eu-west-2)
+- EBS Snapshot: my-first-snapshot
+- Updated project-02-ec2-auto-scaling README checklist
+
+**Key things learned:**
+- EBS-backed AMI: must stop instance first. Persistent storage.
+- Instance store-backed AMI: cannot stop, data lost on termination
+- Snapshots are incremental — only changed blocks saved after first
+- Snapshots are region-specific, EBS volumes are AZ-specific
+- Use DLM (Data Lifecycle Manager) to automate snapshot backups
+- ALB = Layer 7 HTTP/HTTPS content routing
+- NLB = Layer 4 TCP/UDP extreme performance static IP
+- GLB = Layer 3/4 for security appliances (firewalls, IDS)
+
+**Still unsure about:**
+- ELB cross-zone load balancing — need to read more
+- When to use GLB vs WAF for security — will ask AWS Maya
+
+**Anki cards added:** Cards 20-25
+
+---
 ## Certification Progress
 
 | Certification | Target | Status |
@@ -185,7 +219,7 @@ and portfolio-building programme.
 
 | Week | Cards added | Total deck |
 |---|---|---|
-| Week 1 | 19 | 19 |
+| Week 1 | 25 | 25 |
 
 ---
 
