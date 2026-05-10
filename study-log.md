@@ -185,7 +185,9 @@ and portfolio-building programme.
 - Custom AMI: my-first-ami (Amazon Linux 2023, eu-west-2)
 - EBS Snapshot: my-first-snapshot
 - Updated project-02-ec2-auto-scaling README checklist
-
+- Architecture diagram: project-02-architecture.png 
+  (draw.io export — Internet > ALB > Auto Scaling Group)
+  
 **Key things learned:**
 - EBS-backed AMI: must stop instance first. Persistent storage.
 - Instance store-backed AMI: cannot stop, data lost on termination
