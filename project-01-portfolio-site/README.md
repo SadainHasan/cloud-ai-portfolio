@@ -3,7 +3,7 @@
 **Author:** Khandaker Sadain Hasan  
 **Location:** Leicester, UK  
 **Date started:** 01 May 2026  
-**Status:** ✅ Live — d2ven7lubrbrhs.cloudfront.net
+**Status:** ✅ Live — https://d2ven7lubrbrhs.cloudfront.net
 
 ---
 
