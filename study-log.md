@@ -234,7 +234,7 @@ and portfolio-building programme.
 - Origin Access Control (OAC) — want to add this next
 - Route 53 custom domain setup — future task
 
-**Anki cards added:** Cards 25-27
+**Anki cards added:** Cards 25-28
 
 ---
 
