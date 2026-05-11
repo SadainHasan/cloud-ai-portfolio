@@ -1,6 +1,6 @@
 # Project 03 — Custom VPC Network
 
-**Author:** Hasan  
+**Author:** Khandaker Sadain Hasan  
 **Date started:** 08 May 2026  
 **Status:** 🔄 In progress  
 **Week:** 2 of 104
