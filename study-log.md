@@ -254,7 +254,7 @@ and portfolio-building programme.
 
 | Week | Cards added | Total deck |
 |---|---|---|
-| Week 1 | 25 | 25 |
+| Week 1 | 29 | 29 |
 
 ---
 
