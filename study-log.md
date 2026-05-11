@@ -17,7 +17,7 @@ and portfolio-building programme.
 
 ---
 
-### Day 1 — Thursday 01 May 2026
+### Day 1 — Friday 01 May 2026
 
 **Topic studied:** Environment setup — AWS, GitHub, VS Code, AWS CLI
 
@@ -44,7 +44,7 @@ and portfolio-building programme.
 
 ---
 
-### Day 2 — Friday 02 May 2026
+### Day 2 — Saturday 02 May 2026
 
 **Topic studied:** AI foundations — Claude prompt engineering
 
@@ -72,7 +72,7 @@ and portfolio-building programme.
 
 ---
 
-### Day 3 — Saturday 03 May 2026
+### Day 3 — Sunday 03 May 2026
 
 **Topic studied:** Amazon EC2 fundamentals
 
@@ -105,7 +105,7 @@ and portfolio-building programme.
 
 ---
 
-### Day 4 — Sunday 04 May 2026
+### Day 4 — Monday 04 May 2026
 
 **Topic studied:** Revision day + Anki setup
 
@@ -134,7 +134,7 @@ and portfolio-building programme.
 
 ---
 
-### Day 5 — Monday 05 May 2026
+### Day 5 — Tuesday 05 May 2026
 
 **Topic studied:** AI tools — Claude prompt engineering deep dive + ASG intro
 
@@ -169,7 +169,7 @@ and portfolio-building programme.
 
 ---
 
-### Day 6 — Tuesday 06 May 2026
+### Day 6 — Wednesday 06 May 2026
 
 **Topic studied:** AMI deep dive, EBS Snapshots, ELB introduction
 
@@ -206,7 +206,7 @@ and portfolio-building programme.
 
 ---
 
-### Day 7 — Wednesday 07 May 2026
+### Day 7 — Thursday 07 May 2026
 
 **Topic studied:** Build day — Project 1 complete
 
