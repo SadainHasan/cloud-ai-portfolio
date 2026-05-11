@@ -238,6 +238,46 @@ and portfolio-building programme.
 
 ---
 
+## Week 2 — 08 May to 14 May 2026
+**Theme:** AWS VPC Networking Deep Dive
+
+---
+
+### Day 8 — Thursday 08 May 2026
+
+**Topic studied:** VPC fundamentals — 
+custom VPC, subnets, Internet Gateway, route tables
+
+**What I did:**
+- Read DCT training notes: VPC pp.117-125
+- Created custom VPC (my-custom-vpc, 10.0.0.0/16)
+- Created 4 subnets across 2 AZs (2 public, 2 private)
+- Created and attached Internet Gateway (my-igw)
+- Created public route table with 0.0.0.0/0 → IGW route
+- Enabled auto-assign public IP on public subnets
+- Created Project 03 on GitHub with full documentation
+
+**What I built:**
+- Custom VPC with complete subnet architecture
+- project-03-vpc-network on GitHub with README and screenshots
+
+**Key things learned:**
+- VPC = isolated private cloud network within one region
+- Public subnet = has route to IGW. Private = no route to IGW
+- AWS reserves 5 IPs per subnet — /24 = 251 usable
+- One Internet Gateway per VPC maximum — free resource
+- Route table controls traffic routing per subnet
+- High availability = subnets in minimum 2 AZs
+
+**Still unsure about:**
+- NAT Gateway — how private subnets access internet outbound
+- Security Groups vs NACLs — will cover Day 10
+- VPC peering — will cover Week 5
+
+**Anki cards added:** Cards 31-35
+
+---
+
 ## Certification Progress
 
 | Certification | Target | Status |
