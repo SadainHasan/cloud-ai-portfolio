@@ -3,7 +3,7 @@
 **Author:** Khandaker Sadain Hasan  
 **Location:** Leicester, UK  
 **Date started:** 01 May 2026  
-**Status:** 🔄 In progress
+**Status:** ✅ Live — d2ven7lubrbrhs.cloudfront.net
 
 ---
 
@@ -76,12 +76,11 @@ No web servers. No maintenance. Estimated cost approximately £1 per month.
 
 ## Steps
 
-- [ ] Create S3 bucket and enable static website hosting
-- [ ] Upload index.html portfolio page
-- [ ] Create CloudFront distribution pointing to S3
+- [x] Create S3 bucket and enable static website hosting
+- [x] Upload index.html portfolio page
+- [x] Create CloudFront distribution pointing to S3
 - [ ] Configure Origin Access Control (OAC) to secure S3
-- [ ] Apply S3 bucket policy allowing only CloudFront access
-- [ ] Verify HTTPS working via CloudFront URL
+- [x] Verify HTTPS working via CloudFront URL
 - [ ] Connect custom domain via Route 53
 - [ ] Add AWS Certificate Manager SSL for custom domain
 
@@ -98,6 +97,19 @@ This architecture:
 - **Security:** S3 bucket not publicly accessible — only CloudFront can read it
 - **Reliability:** CloudFront has 99.99% SLA
 - **SSL:** free and auto-renewed via AWS Certificate Manager
+
+---
+
+## Screenshots
+
+### S3 Static Website Hosting
+![S3 Hosting](s3-static-hosting.png)
+
+### CloudFront Distribution
+![CloudFront](cloudfront-distribution.png)
+
+### Live Portfolio Site
+![Live Site](portfolio-live.png)
 
 ---
 
