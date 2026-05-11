@@ -205,6 +205,39 @@ and portfolio-building programme.
 **Anki cards added:** Cards 20-25
 
 ---
+
+### Day 7 — Wednesday 07 May 2026
+
+**Topic studied:** Build day — Project 1 complete
+
+**What I did:**
+- Built complete S3 + CloudFront portfolio website
+- Created S3 bucket with static website hosting
+- Uploaded index.html portfolio page
+- Created CloudFront distribution with HTTPS
+- Site is now live at https://d2ven7lubrbrhs.cloudfront.net
+- Added screenshots to GitHub README
+
+**What I built:**
+- Live portfolio website: https://d2ven7lubrbrhs.cloudfront.net
+- project-01-portfolio-site fully documented on GitHub
+- 3 screenshots added to project README
+
+**Key things learned:**
+- S3 static hosting serves HTML but needs bucket policy for public access
+- CloudFront adds HTTPS, caching, and global edge delivery
+- CloudFront deployment takes 5-15 minutes to propagate globally
+- Redirect HTTP to HTTPS is best practice — always enable this
+- Price class: North America and Europe sufficient for UK portfolio
+
+**Still unsure about:**
+- Origin Access Control (OAC) — want to add this next
+- Route 53 custom domain setup — future task
+
+**Anki cards added:** Cards 25-27
+
+---
+
 ## Certification Progress
 
 | Certification | Target | Status |
