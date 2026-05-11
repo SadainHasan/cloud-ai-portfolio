@@ -2,124 +2,99 @@
 
 **Author:** Khandaker Sadain Hasan  
 **Date started:** 08 May 2026  
-**Status:** 🔄 In progress  
-**Week:** 2 of 104
+**Status:** 🔄 In progress
 
 ---
 
 ## What Problem Does This Solve?
 
-The default AWS VPC is convenient but not suitable for 
-production use — all subnets are public and there is no
-network isolation between resources.
-
-This project builds a production-ready VPC architecture with:
-- Public subnets for internet-facing resources (ALB, NAT Gateway)
-- Private subnets for protected resources (RDS, Lambda, EC2)
-- High availability across 2 Availability Zones
-- Proper routing so private resources can reach internet
-  outbound but cannot be reached from internet inbound
+The default AWS VPC has all subnets public — unsuitable 
+for production workloads. A custom VPC provides:
+- Isolated network environment
+- Separate public and private tiers
+- Fine-grained security controls
+- Multi-AZ high availability
 
 ---
 
 ## Architecture
-AWS Cloud (eu-west-2)
-┌───────────────────────────────────────────────┐
-│              my-custom-vpc                    │
-│              10.0.0.0/16                      │
-│                                               │
-│  ┌─────────────────┐  ┌─────────────────┐     │
-│  │  AZ: eu-west-2a │  │  AZ: eu-west-2b │     │
-│  │                 │  │                 │     │
-│  │ Public Subnet 1 │  │ Public Subnet 2 │     │
-│  │  10.0.1.0/24    │  │  10.0.2.0/24    │     │
-│  │                 │  │                 │     │
-│  │ Private Subnet 1│  │ Private Subnet 2│     │
-│  │  10.0.3.0/24    │  │  10.0.4.0/24    │     │
-│  └─────────────────┘  └─────────────────┘     │
-│                                               │
-│  [Internet Gateway — my-igw]                  │
-└───────────────────────────────────────────────┘
-                      │
-                 [Internet]
 
-## Screenshots
-
-### VPC Overview
-![VPC Overview](vpc-overview.png)
-
-### Subnets — 4 subnets across 2 AZs
-![Subnets](subnets.png)
-
-### Public Route Table — includes route to Internet Gateway
-![Route Table](route-table.png)
-
+VPC: 10.0.0.0/16 (eu-west-2)
+│
+├── eu-west-2a
+│   ├── public-subnet-1  (10.0.1.0/24)  → Internet Gateway
+│   └── private-subnet-1 (10.0.3.0/24)  → Local only
+│
+└── eu-west-2b
+├── public-subnet-2  (10.0.2.0/24)  → Internet Gateway
+└── private-subnet-2 (10.0.4.0/24)  → Local only
 ---
 
-## AWS Services Used
+## AWS Components Built
 
-| Service | Purpose |
-|---|---|
-| Amazon VPC | Isolated private network — CIDR 10.0.0.0/16 |
-| Subnets (x4) | Network segments in 2 AZs — 2 public, 2 private |
-| Internet Gateway | Connects VPC to the internet |
-| Route Tables | Controls traffic routing per subnet |
-| Security Groups | Instance-level firewall (coming next) |
-| NACLs | Subnet-level firewall (coming next) |
-
----
-
-## Network Design
-
-| Subnet | CIDR | AZ | Type | Route |
-|---|---|---|---|---|
-| public-subnet-1 | 10.0.1.0/24 | eu-west-2a | Public | → IGW |
-| public-subnet-2 | 10.0.2.0/24 | eu-west-2b | Public | → IGW |
-| private-subnet-1 | 10.0.3.0/24 | eu-west-2a | Private | Local only |
-| private-subnet-2 | 10.0.4.0/24 | eu-west-2b | Private | Local only |
+| Component | Name | Details |
+|---|---|---|
+| VPC | my-custom-vpc | CIDR: 10.0.0.0/16, Region: eu-west-2 |
+| Public Subnet 1 | public-subnet-1 | 10.0.1.0/24, AZ: eu-west-2a |
+| Public Subnet 2 | public-subnet-2 | 10.0.2.0/24, AZ: eu-west-2b |
+| Private Subnet 1 | private-subnet-1 | 10.0.3.0/24, AZ: eu-west-2a |
+| Private Subnet 2 | private-subnet-2 | 10.0.4.0/24, AZ: eu-west-2b |
+| Internet Gateway | my-igw | Attached to my-custom-vpc |
+| Public Route Table | public-route-table | 0.0.0.0/0 → my-igw |
 
 ---
 
 ## Steps Completed
 
-- [x] Created VPC — 10.0.0.0/16 (my-custom-vpc)
-- [x] Created 4 subnets across 2 AZs (2 public, 2 private)
-- [x] Created and attached Internet Gateway (my-igw)
-- [x] Created public route table with 0.0.0.0/0 → IGW
+- [x] Created custom VPC (10.0.0.0/16)
+- [x] Created 2 public subnets across 2 AZs
+- [x] Created 2 private subnets across 2 AZs
+- [x] Created and attached Internet Gateway
+- [x] Created public route table with internet route
 - [x] Associated public subnets with public route table
-- [x] Enabled auto-assign public IP on public subnets
-- [ ] Create Security Groups (Day 10)
-- [ ] Create NACLs (Day 10)
-- [ ] Create NAT Gateway for private subnets (Day 10)
+- [ ] Create NAT Gateway for private subnet outbound access
+- [ ] Create Security Groups
+- [ ] Create Network ACLs
 - [ ] Launch EC2 in public subnet to test connectivity
-- [ ] Launch EC2 in private subnet to test isolation
 
 ---
 
 ## Key Things Learned
 
-- VPC = isolated private network within AWS region
-- Subnets are AZ-specific — tie to one AZ only
-- Public subnet = has route to Internet Gateway
-- Private subnet = no route to Internet Gateway
-- AWS reserves 5 IPs per subnet — /24 = 251 usable IPs
+- VPC = isolated private network. Like a bank's internal network.
+- Public subnet = has route to IGW. Private subnet = local only.
+- AWS reserves 5 IPs per subnet — /24 = 251 usable addresses
 - One Internet Gateway per VPC maximum
-- Route table controls where traffic goes per subnet
+- Route tables control where traffic goes — must associate with subnets
+- Private subnets are NOT the same as no internet — they can get 
+  outbound access via NAT Gateway (coming next session)
 
 ---
 
 ## Exam Relevance — AWS SAA-C03
 
-| Topic | What I practiced |
+| Topic | Covered |
 |---|---|
-| VPC creation and CIDR blocks | Created 10.0.0.0/16 VPC |
-| Subnet design | Public/private across multiple AZs |
-| Internet Gateway | Created, attached, added to route table |
-| Route tables | Public route with IGW, private route local only |
-| High availability | Subnets in 2 AZs for fault tolerance |
+| VPC CIDR blocks | ✅ 10.0.0.0/16 range |
+| Public vs private subnets | ✅ Both created |
+| Internet Gateway | ✅ Created and attached |
+| Route tables | ✅ Public route table with IGW route |
+| Multi-AZ design | ✅ Subnets across eu-west-2a and eu-west-2b |
 
 ---
 
-*Part of a 24-month Cloud + AI Automation Specialist plan*
+## Cost
+
+All VPC components are FREE:
+- VPC: $0
+- Subnets: $0
+- Internet Gateway: $0
+- Route Tables: $0
+
+⚠️ NAT Gateway (coming next session): $0.045/hour
+Delete immediately after learning task.
+
+---
+
+*Part of a 24-month Cloud + AI Automation Specialist plan*  
 *MSc Cloud Computing, University of Leicester*
-*AWS SAA target: October 2026*
