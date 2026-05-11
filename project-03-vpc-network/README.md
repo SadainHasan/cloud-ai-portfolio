@@ -42,6 +42,18 @@ AWS Cloud (eu-west-2)
 └───────────────────────────────────────────────┘
                       │
                  [Internet]
+
+## Screenshots
+
+### VPC Overview
+![VPC Overview](vpc-overview.png)
+
+### Subnets — 4 subnets across 2 AZs
+![Subnets](subnets.png)
+
+### Public Route Table — includes route to Internet Gateway
+![Route Table](route-table.png)
+
 ---
 
 ## AWS Services Used
