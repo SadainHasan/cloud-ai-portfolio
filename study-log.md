@@ -302,7 +302,7 @@ custom VPC, subnets, Internet Gateway, route tables
 
 | Project | Status | Week started |
 |---|---|---|
-| project-01-portfolio-site | 🔄 In progress | Week 1 |
+| project-01-portfolio-site | ✅ Live | Week 1 |
 | project-02-ec2-auto-scaling | 🔄 In progress | Week 1 |
 
 ---
