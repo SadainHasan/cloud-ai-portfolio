@@ -278,6 +278,53 @@ custom VPC, subnets, Internet Gateway, route tables
 
 ---
 
+### Day 9 — Saturday 09 May 2026
+
+**Topic studied:** AI automation — n8n installation 
+and workflow building
+
+**What I did:**
+- Installed n8n on Windows via npm
+- Created n8n account at localhost:5678
+- Built Workflow 1: Leicester Weather Daily
+  - Schedule Trigger → HTTP Request (Open-Meteo API)
+  - → Code in JavaScript → Send an Email (SMTP)
+  - Gmail SMTP configured with App Password (Port 465)
+  - Email received and verified at 9:20pm ✅
+  - Workflow set to Active — 8:00am daily
+- Built Workflow 2: Study Progress Tracker
+  - Execute Workflow → Edit Fields → IF
+  - → Edit Fields1 (true) / Edit Fields2 (false)
+  - True branch ran correctly (cards=40 >= 30) ✅
+  - Both branches tested and verified ✅
+- Created Project 06 on GitHub with full README
+- All 3 screenshots uploaded to GitHub
+
+**What I built:**
+- n8n Workflow 1: Leicester Weather Daily (ACTIVE ✅)
+- n8n Workflow 2: Study Progress Tracker (tested ✅)
+- project-06-n8n-automation fully documented
+
+**Key things learned:**
+- n8n workflow pattern: trigger → process → output
+- HTTP Request calls any public API — no code needed
+- Code in JavaScript transforms raw JSON into readable text
+- Gmail SMTP needs App Password — Port 465 SSL/TLS
+- IF node = true/false conditional logic
+- Edit Fields (Set) creates data that flows to next nodes
+- n8n auto-saves — Publish = activate not save
+- Expression {{ $json.field }} links node data together
+
+**Still unsure about:**
+- Error handling — what if HTTP Request fails?
+- Deploying n8n on AWS EC2 for 24/7 availability
+
+**Anki cards added:** Cards 35-40
+**Deck total:** 40 cards ✅
+
+
+---
+
 ## Certification Progress
 
 | Certification | Target | Status |
