@@ -319,8 +319,8 @@ and workflow building
 - Error handling — what if HTTP Request fails?
 - Deploying n8n on AWS EC2 for 24/7 availability
 
-**Anki cards added:** Cards 35-40
-**Deck total:** 40 cards ✅
+**Anki cards added:** Cards 35-42
+**Deck total:** 42 cards ✅
 
 
 ---
@@ -342,15 +342,17 @@ and workflow building
 | Week | Cards added | Total deck |
 |---|---|---|
 | Week 1 | 29 | 29 |
-
+| Week 2 | 29 | 29 |
 ---
 
 ## GitHub Projects
 
-| Project | Status | Week started |
-|---|---|---|
-| project-01-portfolio-site | ✅ Live | Week 1 |
-| project-02-ec2-auto-scaling | 🔄 In progress | Week 1 |
+| Project | Status | Week started | Notes |
+|---|---|---|---|
+| project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront deployed |
+| project-02-ec2-auto-scaling | 🔄 In progress | Week 1 | AMI created, diagram added |
+| project-03-vpc-network | 🔄 In progress | Week 2 | VPC + 4 subnets + IGW built |
+| project-06-n8n-automation | ✅ Built | Week 2 | 2 workflows live and tested |
 
 ---
 
