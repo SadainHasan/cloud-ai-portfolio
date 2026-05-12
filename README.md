@@ -36,6 +36,7 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 | 01 | Static Portfolio Website | S3, CloudFront, ACM | ✅ Live |
 | 02 | EC2 Auto-Scaling Web Server | EC2, ALB, ASG, EBS | 🔄 In Progress |
 | 03 | Custom VPC Network | VPC, Subnets, IGW, Route Tables | 🔄 In progress | 
+| 06 | n8n Business Automation | n8n, SMTP, HTTP API, JavaScript | ✅ 2 workflows live |
 
 *(Projects added weekly as the plan progresses)*
 ---
