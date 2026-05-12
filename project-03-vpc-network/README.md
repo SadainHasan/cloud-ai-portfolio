@@ -19,26 +19,17 @@ for production workloads. A custom VPC provides:
 
 ## Architecture
 
-VPC: 10.0.0.0/16 (eu-west-2)
-│
-├── eu-west-2a
-│   ├── public-subnet-1  (10.0.1.0/24)  → Internet Gateway
-│   └── private-subnet-1 (10.0.3.0/24)  → Local only
-│
-└── eu-west-2b
-├── public-subnet-2  (10.0.2.0/24)  → Internet Gateway
-└── private-subnet-2 (10.0.4.0/24)  → Local only
----
+![VPC Architecture Diagram](project-03-vpc-architecture.png)
 
-## AWS Components Built
+### Components
 
-| Component | Name | Details |
+| Component | Name | CIDR / Details |
 |---|---|---|
-| VPC | my-custom-vpc | CIDR: 10.0.0.0/16, Region: eu-west-2 |
-| Public Subnet 1 | public-subnet-1 | 10.0.1.0/24, AZ: eu-west-2a |
-| Public Subnet 2 | public-subnet-2 | 10.0.2.0/24, AZ: eu-west-2b |
-| Private Subnet 1 | private-subnet-1 | 10.0.3.0/24, AZ: eu-west-2a |
-| Private Subnet 2 | private-subnet-2 | 10.0.4.0/24, AZ: eu-west-2b |
+| VPC | my-custom-vpc | 10.0.0.0/16 |
+| Public Subnet 1 | public-subnet-1 | 10.0.1.0/24 — eu-west-2a |
+| Public Subnet 2 | public-subnet-2 | 10.0.2.0/24 — eu-west-2b |
+| Private Subnet 1 | private-subnet-1 | 10.0.3.0/24 — eu-west-2a |
+| Private Subnet 2 | private-subnet-2 | 10.0.4.0/24 — eu-west-2b |
 | Internet Gateway | my-igw | Attached to my-custom-vpc |
 | Public Route Table | public-route-table | 0.0.0.0/0 → my-igw |
 
