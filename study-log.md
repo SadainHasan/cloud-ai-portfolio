@@ -322,7 +322,56 @@ and workflow building
 **Anki cards added:** Cards 35-42
 **Deck total:** 42 cards ✅
 
+---
 
+### Day 10 — Sunday 10 May 2026
+
+**Topic studied:** NAT Gateway, Security Groups, NACLs
+**DCT Book:** pp.121-124
+
+**What I did:**
+- Read DCT book: NAT Instances p.121, NAT Gateways pp.122-123,
+  Security Groups p.123, Network ACLs p.124
+- Created NAT Gateway in public-subnet-1
+- Allocated Elastic IP for NAT Gateway
+- Updated private route table: 0.0.0.0/0 → NAT Gateway
+- Created Security Group: web-server-sg
+  Inbound: HTTP 80, HTTPS 443, SSH 22 (My IP only)
+  Outbound: All traffic (default)
+- Created custom NACL: my-custom-nacl
+  Inbound rules: 100 Allow 80, 110 Allow 443, 120 Allow 1024-65535
+  Outbound rules: 100 Allow 80, 110 Allow 443, 120 Allow 1024-65535
+- Updated VPC architecture diagram to v2 on draw.io
+- DELETED NAT Gateway and released Elastic IP same session ✅
+
+**What I built:**
+- NAT Gateway — created, learned, DELETED same session ✅
+- Security Group: web-server-sg in my-custom-vpc
+- Custom NACL: my-custom-nacl with full rules
+- VPC architecture diagram v2 uploaded to GitHub
+
+**Key things learned:**
+- NAT Gateway = AWS managed, public subnet, IPv4 only,
+  cannot associate SG, cannot use as bastion, 45 Gbps max
+- NAT Instance = you manage, less reliable, needs SG,
+  must disable source/dest check, can be bastion host
+- SG = stateful, instance level, allow rules only,
+  implicit deny, all rules evaluated, cannot block IPs
+- NACL = stateless, subnet level, allow AND deny,
+  number order evaluation, separate in/out rules,
+  default allows all, custom denies all
+- Ephemeral ports 1024-65535 must be in NACL outbound
+  because NACLs are stateless — responses need explicit allow
+- NACL = first line of defence. SG = second line.
+- Memory trick: SG = Stateful Security guard.
+  NACL = No memory Checkpoint Lane.
+
+**Still unsure about:**
+- VPC peering — will cover in later weeks
+
+**Anki cards added:** Cards 43-47
+
+---
 ---
 
 ## Certification Progress
