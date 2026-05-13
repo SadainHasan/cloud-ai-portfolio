@@ -43,10 +43,14 @@ for production workloads. A custom VPC provides:
 - [x] Created and attached Internet Gateway
 - [x] Created public route table with internet route
 - [x] Associated public subnets with public route table
-- [ ] Create NAT Gateway for private subnet outbound access
-- [ ] Create Security Groups
-- [ ] Create Network ACLs
-- [ ] Launch EC2 in public subnet to test connectivity
+- [x] Created NAT Gateway in public-subnet-1
+- [x] Updated private route table: 0.0.0.0/0 → NAT Gateway
+- [x] Created Security Group: web-server-sg (HTTP/HTTPS/SSH)
+- [x] Created custom NACL with inbound and outbound rules
+- [x] Architecture diagram updated to v2 with NAT Gateway
+- [x] NAT Gateway DELETED after learning session ✅
+- [ ] Launch EC2 to test connectivity end to end
+- [ ] Add VPC Flow Logs
 
 ---
 
