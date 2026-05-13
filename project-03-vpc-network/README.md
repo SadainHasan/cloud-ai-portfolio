@@ -20,6 +20,8 @@ for production workloads. A custom VPC provides:
 ## Architecture
 
 ![VPC Architecture Diagram](project-03-vpc-architecture.png)
+![VPC Architecture Diagram v2](project-03-vpc-architecture-v2.png)
+
 
 ### Components
 
