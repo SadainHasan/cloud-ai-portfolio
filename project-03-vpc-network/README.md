@@ -78,7 +78,8 @@ Updated with NAT gateway
 - Route tables control where traffic goes — must associate with subnets
 - Private subnets are NOT the same as no internet — they can get 
   outbound access via NAT Gateway (coming next session)
-
+- This project could have used the newer **Regional NAT Gateway** instead 
+  of the traditional Zonal approach.
 ---
 
 ## Exam Relevance — AWS SAA-C03
