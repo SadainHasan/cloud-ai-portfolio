@@ -20,8 +20,21 @@ for production workloads. A custom VPC provides:
 ## Architecture
 
 ![VPC Architecture Diagram](project-03-vpc-architecture.png)
+
+Updated with NAT Gateway
 ![VPC Architecture Diagram v2](project-03-vpc-architecture-v2.png)
 
+Updated with NACL rules
+![NACL rules](nacl-rules.png)
+
+Updated with Security group
+![Security group](security-group.png)
+
+Updated with Private route table
+![Private route table](private-route-table.png)
+
+Updated with NAT gateway
+![NAT gateway](nat-gateway.png)
 
 ### Components
 
