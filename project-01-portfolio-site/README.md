@@ -85,6 +85,19 @@ No web servers. No maintenance. Estimated cost approximately £1 per month.
 - [ ] Add AWS Certificate Manager SSL for custom domain
 
 ---
+## What Problem Does This Solve?
+
+Traditional website hosting requires a web server running 
+24/7 at £10-15/month, manual SSL certificate renewal every 
+year, and serves content from a single location.
+
+This S3 + CloudFront architecture eliminates all of that.
+No server to manage. SSL auto-renewed by AWS. Content served 
+from the nearest of 450+ global edge locations. Total cost: 
+approximately $0.11/month — a 99% cost reduction vs 
+traditional hosting with better performance and reliability.
+
+---
 
 ## Why This Architecture?
 
