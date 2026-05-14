@@ -37,6 +37,19 @@ Instance Connect directly in the browser.
 | 6 | If traffic increases, Auto Scaling Group launches new EC2 instances automatically |
 | 7 | If traffic decreases, Auto Scaling Group terminates excess instances |
 
+## What Problem Does This Solve?
+
+Fixed-capacity servers waste money during low traffic and 
+fail under high demand. A bank sizing its trading platform 
+for peak load pays for idle capacity 23 hours a day.
+
+An Auto Scaling Group with an Application Load Balancer 
+solves both simultaneously. The ASG adds EC2 instances 
+automatically when traffic increases and removes them when 
+it drops. The ALB stops sending traffic to any failed 
+instance immediately. Result: handles any traffic volume, 
+costs scale with actual usage, zero downtime on failure.
+
 ### Why this architecture?
 
 - **High availability:** ALB distributes traffic across multiple EC2 instances
