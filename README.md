@@ -4,6 +4,9 @@
 MSc Cloud Computing — University of Leicester
 FAVP-level IT Leadership (13 years) — Trust Bank Investment Ltd, Bangladesh
 
+🌐 **Portfolio site:** https://d2ven7lubrbrhs.cloudfront.net
+💻 **GitHub:** https://github.com/SadainHasan
+
 ---
 
 ## About This Portfolio
@@ -17,46 +20,47 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 
 ---
 
-## Certifications In Progress
+## Certifications
 
 | Certification | Target Date | Status |
-| --- | --- | --- |
-| AWS Cloud Practitioner | Jan 2022 | ✅ Completed (Expired Jan 2025) |
-| AWS SAA (SAA-C03) | October 2026 | 🔄 In Progress |
+|---|---|---|
+| AWS Cloud Practitioner (CLF-C02) | January 2022 | ✅ Certified (expired Jan 2025) |
+| AWS SAA (SAA-C03) | October 2026 | 🔄 In progress |
 | AZ-104 Azure Administrator | January 2027 | ⏳ Planned |
-| AWS CSAP | April 2027 | ⏳ Planned |
-| Terraform Associate | May 2027 | ⏳ Planned |
+| AWS Solutions Architect Professional (CSAP) | April 2027 | ⏳ Planned |
+| HashiCorp Terraform Associate | May 2027 | ⏳ Planned |
 
 ---
 
 ## Projects
 
 | # | Project | Services | Status |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | 01 | Static Portfolio Website | S3, CloudFront, ACM | ✅ Live |
-| 02 | EC2 Auto-Scaling Web Server | EC2, ALB, ASG, EBS | 🔄 In Progress |
-| 03 | Custom VPC Network | VPC, Subnets, IGW, Route Tables | 🔄 In progress | 
-| 06 | n8n Business Automation | n8n, SMTP, HTTP API, JavaScript | ✅ 2 workflows live |
+| 02 | EC2 Auto-Scaling Web Server | EC2, ALB, ASG, EBS | 🔄 In progress |
+| 03 | Custom VPC Network | VPC, Subnets, IGW, NAT Gateway, Security Groups, NACLs | 🔄 In progress |
+| 06 | project-06-n8n-automation | ✅ Built | Week 2 | 2 workflows live and tested |
 
 *(Projects added weekly as the plan progresses)*
+
 ---
 
 ## Study Log
 
-Daily learning evidence — topics studied, projects built, 
+Daily learning evidence — topics studied, projects built,
 and progress tracked throughout the 104-week plan.
 
 📖 [View Study Log](study-log.md)
 
 ---
 
-## 📝 Notes & Learning
+## Notes and Learning
 
 Study notes and reference guides built during the 24-month roadmap.
 
 | File | Topic | Description |
-| --- | --- | --- |
-| [prompting-notes.md](./prompting-notes.md) | AI Prompt Engineering | 5 core prompting techniques with real SME examples — Direct, Role-Based, Chain-of-Thought, Format-Specific, Iterative Refinement |
+|---|---|---|
+| [prompting-notes.md](./prompting-notes.md) | AI Prompt Engineering | 5 core prompting techniques — Direct, Role-Based, Chain-of-Thought, Format-Specific, Iterative Refinement |
 
 *(Notes added weekly — covering AWS, Azure, Python, Terraform, AI Automation)*
 
@@ -88,5 +92,6 @@ plan to return to senior technology at cloud architect level.
 
 ## Connect
 
-LinkedIn: https://www.linkedin.com/in/khandaker-sadain-hasan/
-Location: Leicester, United Kingdom
+🔗 LinkedIn: https://www.linkedin.com/in/khandaker-sadain-hasan/
+💻 GitHub: https://github.com/SadainHasan
+📍 Location: Leicester, United Kingdom
