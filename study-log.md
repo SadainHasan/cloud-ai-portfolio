@@ -372,6 +372,32 @@ and workflow building
 **Anki cards added:** Cards 43-47
 
 ---
+
+### Day 11 — Monday 11 May 2026
+
+**Topic:** Revision day — Week 2 review + community research
+
+**What I did:**
+- Full Anki review — all 47 cards
+- 15 VPC practice questions on ExamTopics
+- Answered 20 revision questions without notes
+- Researched Leicester community organisations on lcvs.org.uk
+- Found [number] potential organisations — noted in Notion
+- Added business value paragraphs to Projects 01, 02, 03
+
+**Practice questions:**
+- Attempted: 15 VPC questions
+- Score: [your score]/15
+- Weak areas identified: [topics you got wrong]
+
+**Community research:**
+- Found [number] organisations on lcvs.org.uk
+- Will contact Day 14 (Wednesday 14 May)
+
+**Anki cards added:** Card 48 (SAA exam format)
+**Deck total:** 48 cards
+
+---
 ---
 
 ## Certification Progress
