@@ -16,6 +16,23 @@ for production workloads. A custom VPC provides:
 - Multi-AZ high availability
 
 ---
+## What Problem Does This Solve?
+
+Placing all resources in a flat public network fails every 
+security audit. A financial institution running trading 
+systems on AWS without network segmentation would expose 
+databases and application servers directly to the internet.
+
+This custom VPC creates a properly segmented network with 
+public and private tiers across two Availability Zones. 
+Public subnets host internet-facing resources only. Private 
+subnets host databases and servers that should never be 
+directly reachable from the internet. Security Groups and 
+NACLs provide defence-in-depth at both instance and subnet 
+level — exactly matching your banking IT regulatory 
+compliance experience.
+
+---
 
 ## Architecture
 
