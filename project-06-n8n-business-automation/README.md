@@ -60,6 +60,16 @@ Any business needing daily automated reporting:
 
 **Post-ILR freelance value: £200-400 per client**
 
+### Enhancement — OpenAI AI Weather Briefing
+
+Workflow 1 enhanced with OpenAI GPT-4o-mini node.
+Instead of raw weather data, the email now contains 
+an AI-written friendly briefing tailored for a care 
+professional working outdoors.
+
+**Screenshot — AI weather output**
+![OpenAI Weather](openai-weather-output.png)
+
 ---
 
 ## Workflow 2 — Study Progress Tracker
@@ -93,6 +103,36 @@ On track ✅     Behind target
 - IF node evaluation with number comparison
 - True/false branching — foundation of intelligent automation
 
+---
+
+### Workflow 3 — Email Summariser to Google Sheets
+
+Takes a business email, uses OpenAI GPT-4o-mini to generate 
+a 3-bullet summary, and saves the result to Google Sheets 
+automatically.
+
+**Flow:**
+[Manual Trigger]
+↓
+[Edit Fields: Email input data]
+↓
+[OpenAI GPT-4o-mini: Summarise in 3 bullets]
+↓
+[Google Sheets: Append summary row]
+
+**Screenshot — Workflow 3**
+![Workflow 3](workflow-03-email-summariser.png)
+
+**Screenshot — Google Sheet output**
+![Google Sheet](google-sheet-output.png)
+
+**Business use case:**
+Executives and managers receive 50-100 emails daily.
+This workflow processes each email automatically and 
+maintains a summary log in Google Sheets. Reduces 
+email processing time by 80% for small teams.
+
+**Post-ILR freelance value: £200-400 per client**
 ---
 
 ## n8n Core Concepts Demonstrated
@@ -129,13 +169,12 @@ On track ✅     Behind target
 ## Steps Completed
 
 - [x] Installed n8n on Windows computer
-- [x] Created account and explored interface
-- [x] Built Workflow 1: Weather email (live and active)
+- [x] Built Workflow 1: Leicester weather email (live and active)
 - [x] Configured Gmail SMTP with App Password
 - [x] Email received and verified ✅
-- [x] Built Workflow 2: Conditional data processing
-- [x] IF node true/false branches both tested ✅
-- [ ] Add AI summarisation to Workflow 1 (Week 3)
+- [x] Built Workflow 2: Study progress tracker with IF logic
+- [x] Added OpenAI GPT-4o-mini to Workflow 1 — AI weather briefing
+- [x] Built Workflow 3: Email summariser → Google Sheets
 - [ ] Build AI Research Bot (Week 28)
 - [ ] Deploy n8n on AWS EC2 for 24/7 (Week 10)
 - [ ] Build charity donor automation (Community Project 2)
