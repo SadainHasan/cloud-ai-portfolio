@@ -398,6 +398,48 @@ and workflow building
 **Deck total:** 48 cards
 
 ---
+
+### Day 12 — Tuesday 12 May 2026
+
+**Topic studied:** AI/Claude — n8n advanced + OpenAI API
+**DCT Book:** Elastic IP p.18 (revision note)
+
+**What I did:**
+- Set up OpenAI API account at platform.openai.com
+- Added $5 credit — enough for months of learning
+- Created API key: n8n-learning
+- Enhanced Workflow 1: added OpenAI GPT-4o-mini node
+  - Weather data now summarised as friendly AI briefing
+  - Tailored for care professional working outdoors ✅
+- Built Workflow 3: Email Summariser to Google Sheets
+  - Manual Trigger → Set (email input) → OpenAI → Google Sheets
+  - AI generates 3-bullet summary of business email
+  - Summary saved to Google Sheets automatically ✅
+- Updated Project 06 GitHub README and screenshots
+
+**What I built:**
+- OpenAI API account with $5 credit
+- Workflow 1 enhanced with AI briefing
+- Workflow 3: Email Summariser → Google Sheets (complete)
+- Project 06 README updated with new sections
+
+**Key things learned:**
+- OpenAI API: pay per use, GPT-4o-mini is cheapest model
+- $5 = approximately 60,000 summarisation requests
+- n8n OpenAI node: Resource=Chat, Operation=Message a Model
+- Expression syntax connects OpenAI output to next node:
+  {{$('OpenAI').first().json.message.content}}
+- Google Sheets node: Append or Update Row operation
+- Column mapping uses expressions to reference previous nodes
+- This workflow pattern (input → AI → output) is the 
+  foundation of every AI automation product
+
+**Still unsure about:**
+- How to trigger the Email Summariser from a real incoming
+  email automatically — will explore Email Trigger node
+
+**Anki cards added:** Cards 49-51
+
 ---
 
 ## Certification Progress
