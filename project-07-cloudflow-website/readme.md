@@ -199,7 +199,7 @@ This architecture is directly sellable to UK SMEs post-ILR (October 2027):
 ![Live Website](day13-live-website.png)
 
 **CloudFront — Enabled:**
-![CloudFront](day13-cloudfront-enabled.png)
+![CloudFront](day13-cloudfront-deployed.png)
 
 **ACM Certificate — Issued:**
 ![ACM](day13-acm-issued.png)
