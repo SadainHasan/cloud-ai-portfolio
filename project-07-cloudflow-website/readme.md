@@ -36,14 +36,9 @@ Scales to millions of visitors with zero infrastructure changes.
 ---
 
 ## Architecture
-IONOS (Domain Registrar — nameservers delegated to Route 53)
-↓  NS delegation
-Route 53 Hosted Zone (Public DNS authority)
-↓  Alias A record — free, works at zone apex (root domain)
-CloudFront Distribution (CDN, HTTPS, TLS 1.3, OAC)
-↓  OAC signed request — only this distribution can read S3
-S3 Private Bucket (Block All Public Access ON)
-ACM Certificate (us-east-1, free, DNS validated) → CloudFront
+
+**Architecture diagram:**
+![Architecture](day13-architecture.png)
 ---
 
 ## Steps
@@ -212,5 +207,4 @@ This architecture is directly sellable to UK SMEs post-ILR (October 2027):
 **Route 53 records:**
 ![Route 53](day13-route53-records.png)
 
-**Architecture diagram:**
-![Architecture](day13-architecture.svg)
+
