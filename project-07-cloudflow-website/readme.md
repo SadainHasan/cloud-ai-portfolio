@@ -134,7 +134,7 @@ The same setup used by enterprise static websites.
 ![Live Website](day13-live-website.png)
 
 **CloudFront distribution — Enabled:**
-![CloudFront](day13-day13-cloudfront-deployed.png)
+![CloudFront](day13-cloudfront-deployed.png)
 
 **ACM Certificate — Issued:**
 ![ACM](day13-acm-issued.png)
