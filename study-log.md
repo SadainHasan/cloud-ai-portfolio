@@ -442,6 +442,58 @@ and workflow building
 
 ---
 
+### Day 13 — Wednesday 13 May 2026
+
+**Topic studied:** AWS Cloud — S3 + CloudFront + Route 53 + ACM
+**DCT Book:** Route 53, ACM, CloudFront, S3 static hosting — pages 135–149
+
+**What I did:**
+- Created private S3 bucket cloudflow-automations-website (eu-west-2)
+- Uploaded index.html and 4 SVG logo files to the bucket
+- Switched to us-east-1 and requested ACM certificate for cloudflowautomations.co.uk
+- Validated certificate with one click via Route 53 — status: Issued ✅
+- Created CloudFront distribution with OAC (origin access control)
+- Pasted OAC bucket policy into S3 — CloudFront now has signed access ✅
+- Added alternate domain names and ACM certificate to CloudFront
+- Set index.html as default root object
+- Created Route 53 Alias A records for zone apex and www
+- Confirmed site live at https://cloudflowautomations.co.uk ✅
+- Drew architecture diagram in draw.io
+- Built Project 07 README and uploaded screenshots to GitHub
+
+**What I built:**
+- Project 07: Cloudflow Automations website — fully live in production
+- URL: https://cloudflowautomations.co.uk
+- Architecture: IONOS → Route 53 (Alias A) → CloudFront (OAC) → S3 (private)
+- Custom SVG logo + Under Construction banner deployed
+
+**Key things learned:**
+- ACM certificate for CloudFront MUST be in us-east-1 — not the same
+  region as your S3 bucket. This is the most common mistake and a
+  favourite SAA exam question
+- Alias A record is free and works at the zone apex (root domain).
+  CNAME cannot be used at the root domain — DNS specification forbids it.
+  This is another frequent SAA exam question
+- OAC is the modern replacement for OAI. OAC signs requests with SigV4
+  and locks the bucket policy to your specific distribution ARN
+- If you forget to set the Default Root Object (index.html) in CloudFront,
+  visiting the root URL returns a 403. Very easy to miss
+- CloudFront SSL changes take 10–15 minutes to propagate to all edge
+  locations. Testing the raw .cloudfront.net URL confirms CloudFront is
+  working while you wait for the custom domain SSL to propagate
+- The full architecture cost: approximately $0.57/month. Enterprise-grade
+  setup for less than a cup of coffee
+
+**Still unsure about:**
+- How CloudFront handles cache invalidations at scale — will explore
+  invalidation strategies and TTL management in a later session
+
+**Anki cards added:** Cards 52–59
+**Deck total: 59 cards** ✅
+
+---
+---
+
 ## Certification Progress
 
 | Certification | Target | Status |
@@ -458,8 +510,8 @@ and workflow building
 
 | Week | Cards added | Total deck |
 |---|---|---|
-| Week 1 | 29 | 29 |
-| Week 2 | 29 | 29 |
+| Week 1 | 1 | 29 |
+| Week 2 | 30 | 59 |
 ---
 
 ## GitHub Projects
