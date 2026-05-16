@@ -1,114 +1,173 @@
 # Project 07 — Cloudflow Automations Company Website
 
-**Live URL:** https://cloudflowautomations.co.uk  
-**Status:** LIVE ✅  
-**Deployed:** May 2026  
+**Live URL:** https://cloudflowautomations.co.uk
+**Status:** ✅ LIVE
+**Deployed:** May 2026
+
+---
+
+## What Problem Does This Solve?
+
+Most UK small businesses either:
+- Pay £10–30/month for slow shared hosting with a control panel they can't manage
+- Pay a web agency £500–1,500 upfront + £50/month for a site that sits on a single server
+- Have no website at all because it feels too technical or expensive
+
+This project solves that by deploying a production-grade company website with:
+- Global CDN — fast loading for anyone in the UK and Europe
+- Full HTTPS — required for Google ranking and user trust
+- Zero server management — no patches, no server crashes, no downtime from traffic spikes
+- Near-zero running cost — under £1/month total
+
+The same architecture that enterprises pay thousands for, running for pocket change.
 
 ---
 
 ## What This Is
 
-A fully deployed production company website for Cloudflow Automations — 
+A fully deployed production company website for Cloudflow Automations —
 a cloud and AI automation consultancy targeting UK SMEs.
 
-The website is live at cloudflowautomations.co.uk with full HTTPS, 
-served globally via CloudFront CDN from a private S3 bucket. 
+The website is live at cloudflowautomations.co.uk with full HTTPS,
+served globally via CloudFront CDN from a completely private S3 bucket.
 No server to maintain. No monthly hosting bill beyond $0.50 for DNS.
+Scales to millions of visitors with zero infrastructure changes.
 
 ---
 
 ## Architecture
-ONOS (Domain Registrar — nameservers delegated to Route 53)
+IONOS (Domain Registrar — nameservers delegated to Route 53)
 ↓  NS delegation
 Route 53 Hosted Zone (Public DNS authority)
-↓  Alias A record — free, works at zone apex
+↓  Alias A record — free, works at zone apex (root domain)
 CloudFront Distribution (CDN, HTTPS, TLS 1.3, OAC)
-↓  OAC signed request — private, signed by CloudFront service principal
-S3 Private Bucket (Block All Public Access ON — only CloudFront can read)ACM Certificate (us-east-1, free, auto-renewing, DNS validated via Route 53)
-→ attached to CloudFront distribution
+↓  OAC signed request — only this distribution can read S3
+S3 Private Bucket (Block All Public Access ON)
+ACM Certificate (us-east-1, free, DNS validated) → CloudFront
+---
+
+## Steps
+
+### Step 1 — Create Private S3 Bucket
+- Region: eu-west-2 (London)
+- Block All Public Access: ON
+- Versioning: Enabled
+- Upload: index.html + 4 SVG logo files
+
+### Step 2 — Request ACM Certificate (us-east-1 ONLY)
+- Switch region to N. Virginia (us-east-1) before requesting
+- Add both root domain and www subdomain to the certificate
+- Validation method: DNS validation
+- Click "Create records in Route 53" — AWS adds CNAMEs automatically
+- Wait for status: Issued (2–5 minutes)
+
+### Step 3 — Create CloudFront Distribution
+- Origin: S3 REST endpoint (not website endpoint)
+- Origin access: Origin Access Control (OAC) — create new OAC
+- Copy OAC bucket policy from yellow banner
+- Viewer protocol policy: Redirect HTTP to HTTPS
+- Default root object: index.html
+- Alternate domain names: cloudflowautomations.co.uk + www
+- Custom SSL certificate: attach ACM cert (must show Issued)
+- Price class: North America and Europe
+
+### Step 4 — Apply OAC Bucket Policy to S3
+- Go to S3 → Permissions → Bucket policy → Edit
+- Paste the OAC policy copied from CloudFront
+- Policy restricts access to the specific distribution ARN only
+
+### Step 5 — Create Route 53 Alias A Records
+- Record 1: root domain (blank name) → Alias → CloudFront distribution
+- Record 2: www → Alias → same CloudFront distribution
+- Both records: Type A, Alias ON, Region US East (N. Virginia)
+
+### Step 6 — Test
+- Wait 10–15 minutes for SSL propagation to 400+ edge locations
+- Test raw CloudFront URL first: https://d2fmeq57h9qj6q.cloudfront.net
+- Then test custom domain: https://cloudflowautomations.co.uk
+- Then test www: https://www.cloudflowautomations.co.uk
+
+---
+
+## Why This Architecture?
+
+**Why S3 instead of a web server (EC2)?**
+Static websites have no server-side logic — HTML, CSS, and JavaScript are just files.
+S3 stores files. No reason to run a server 24/7 just to serve files when S3 does it
+for fractions of a penny per request, with no patching, no crashes, no management.
+
+**Why CloudFront instead of serving directly from S3?**
+S3 is a single region (eu-west-2). Without a CDN the response always comes from one
+fixed location. CloudFront caches the files at 400+ edge locations globally so every
+user gets the response from the nearest location — faster loading, lower latency.
+CloudFront also handles HTTPS termination and forces HTTP → HTTPS at the edge.
+
+**Why OAC instead of making S3 public?**
+A public S3 bucket can be accessed directly by anyone with the URL — bypassing
+CloudFront entirely. This means no HTTPS enforcement, no CDN caching, and no security
+control. OAC keeps the bucket completely private. Only the specific CloudFront
+distribution (locked by ARN in the bucket policy) can call s3:GetObject.
+
+**Why Route 53 Alias A instead of CNAME?**
+DNS RFC 1912 forbids CNAME records at the zone apex — the root of a domain. You cannot
+have cloudflowautomations.co.uk as a CNAME. AWS Alias records solve this — they resolve
+as A records at the DNS level, auto-update if CloudFront IPs change, and are completely
+free (no per-query charge unlike CNAME).
+
+**Why ACM in us-east-1 even though S3 is in eu-west-2?**
+CloudFront's management control plane runs from us-east-1. ACM certificates are
+region-specific. CloudFront can only read ACM from us-east-1. A certificate created
+in eu-west-2 is invisible to CloudFront. This is the single most common mistake
+with this setup.
+
+---
+
+## Exam Relevance (AWS SAA-C03)
+
+| Topic | Exam Point |
+|---|---|
+| S3 + CloudFront | Classic SAA pattern — private S3 served via CloudFront with OAC |
+| OAC vs OAI | OAI is deprecated. OAC is the correct modern answer. If both appear, choose OAC. |
+| ACM region | ACM for CloudFront = us-east-1 ALWAYS — regardless of S3 region or user location |
+| Alias vs CNAME | CNAME cannot be used at zone apex. Alias A = free, works at root domain. Always use Alias for AWS resources. |
+| Route 53 routing | Simple routing used here — one CloudFront origin, no health checks needed |
+| CloudFront Invalidation | To serve updated S3 content immediately: create Invalidation with path /* |
+| Default Root Object | Forgetting index.html = 403 on root URL. Classic SAA trick question. |
+| SSL propagation | CloudFront distributes cert to 400+ edge locations — takes 10–15 mins. Not an error. |
+
+**Likely SAA exam scenarios this project covers:**
+- "A company wants to host a static website with custom domain and HTTPS. Which services?" → S3 + CloudFront + ACM + Route 53
+- "Users get 403 when visiting the root domain but /about.html works fine." → Missing Default Root Object
+- "How do you prevent direct access to S3 while serving via CloudFront?" → OAC bucket policy
+- "Certificate created in eu-west-2 is not showing in CloudFront." → Must be in us-east-1
+
 ---
 
 ## AWS Services Used
 
-**Amazon S3**
+### Amazon S3
 - Private bucket: cloudflow-automations-website (eu-west-2)
-- Block All Public Access: ON — bucket cannot be accessed directly
-- Versioning: enabled — protects against accidental overwrites
-- OAC bucket policy applied — only this CloudFront distribution can call s3:GetObject
-- Stores: index.html + 4 SVG logo files
+- Block All Public Access: ON
+- Versioning: enabled
+- OAC bucket policy — only distribution ARN E3KYEAH6NTZC09 can call s3:GetObject
+- Cost: ~$0.01/month
 
-**AWS CloudFront**
-- Distribution: cloudflow-automations-website
-- Origin: S3 REST endpoint (not website endpoint — required for OAC)
-- Origin Access Control (OAC): cloudflow-automations-oac — modern replacement for OAI
-- Viewer protocol: Redirect HTTP to HTTPS
-- Default root object: index.html
-- Alternate domain names: cloudflowautomations.co.uk, www.cloudflowautomations.co.uk
+### AWS CloudFront
+- Distribution ARN: E3KYEAH6NTZC09
+- OAC, HTTPS redirect, TLS 1.3, Default root object: index.html
+- Alternate domains: cloudflowautomations.co.uk + www
 - Price class: North America and Europe
-- TLS 1.3 with custom ACM certificate
+- Cost: ~$0.05/month
 
-**AWS Certificate Manager (ACM)**
-- Region: us-east-1 (N. Virginia) — REQUIRED for CloudFront, regardless of S3 region
-- Certificate covers: cloudflowautomations.co.uk + www.cloudflowautomations.co.uk
-- Validation: DNS validation via Route 53 (one-click, fully automated)
-- Cost: FREE — ACM public certificates have no charge
-- Auto-renews before expiry as long as validation CNAME stays in Route 53
+### AWS Certificate Manager (ACM)
+- Region: us-east-1 — REQUIRED for CloudFront
+- DNS validated via Route 53 — one-click
+- Cost: FREE
 
-**Amazon Route 53**
-- Hosted zone: cloudflowautomations.co.uk (Public)
-- Root domain record: Alias A → d2fmeq57h9qj6q.cloudfront.net (FREE — no per-query charge)
-- www record: Alias A → same CloudFront distribution
-- ACM validation CNAMEs: 2 records (auto-created by ACM → Route 53 integration)
-- Cost: $0.50/month for the hosted zone + $0.40 per million queries
-
----
-
-## Website
-
-Built as a single-page HTML site. Dark theme. Mobile responsive.
-
-Sections: Hero, Problem, Services, Projects, Tech Stack, About, Pricing, Contact, Footer
-
-Features:
-- Custom SVG logo (C monogram + trailing dots — navy/teal)
-- Under Construction amber banner (dismissible)
-- Gradient wordmark using Space Grotesk font
-- All animations in pure CSS — no JavaScript frameworks
-
-**Logo files:**
-- cloudflow-mark-white.svg — favicon + dark background mark
-- cloudflow-mark.svg — light background mark
-- cloudflow-logo.svg — full horizontal wordmark (light)
-- cloudflow-logo-dark.svg — full horizontal wordmark (dark)
-
----
-
-## Key Learning Points
-
-**Why Alias instead of CNAME at root domain?**  
-DNS specification (RFC 1912) forbids CNAME records at the zone apex.  
-AWS Alias records are a non-standard extension that behaves like a CNAME  
-but resolves as an A record. They are free, work at the root domain,  
-and Route 53 automatically updates them if the CloudFront IP changes.
-
-**Why ACM must be in us-east-1?**  
-CloudFront is a globally distributed service with a control plane in us-east-1.  
-ACM certificates are region-specific. CloudFront can only read certificates  
-from the region where its control plane operates — which is us-east-1.  
-Creating the certificate in eu-west-2 (or any other region) will cause  
-CloudFront to reject it silently.
-
-**Why OAC instead of OAI?**  
-OAI (Origin Access Identity) is being deprecated by AWS.  
-OAC (Origin Access Control) is the modern replacement. It:
-- Supports all S3 regions including newer regions launched after OAI
-- Supports SSE-KMS encrypted buckets
-- Signs requests using AWS Signature Version 4 (SigV4) — more secure
-- Locks the bucket policy to your specific distribution ARN via a condition
-
-**Why not use the S3 website endpoint as CloudFront origin?**  
-The S3 website endpoint doesn't support OAC — it requires the bucket to be  
-public. Using the S3 REST endpoint keeps the bucket private and allows OAC.
+### Amazon Route 53
+- Public hosted zone: cloudflowautomations.co.uk
+- 2x Alias A records → CloudFront
+- Cost: $0.50/month hosted zone + ~$0.01 queries
 
 ---
 
@@ -116,25 +175,36 @@ public. Using the S3 REST endpoint keeps the bucket private and allows OAC.
 
 | Service | Cost |
 |---|---|
-| S3 storage (5 small files) | ~$0.01/month |
-| CloudFront (low traffic) | ~$0.05/month |
+| S3 storage | ~$0.01/month |
+| CloudFront | ~$0.05/month |
 | ACM certificate | FREE |
-| Route 53 hosted zone | $0.50/month |
-| Route 53 queries | ~$0.01/month at low traffic |
+| Route 53 | ~$0.51/month |
 | **Total** | **~$0.57/month** |
 
-This architecture scales to millions of visitors with no infrastructure changes.  
-The same setup used by enterprise static websites.
+---
+
+## Business Value
+
+This architecture is directly sellable to UK SMEs post-ILR (October 2027):
+
+| Client | Setup Fee | Monthly Support |
+|---|---|---|
+| Local restaurant / cafe | £300–500 | £50/month |
+| Solicitor / accountant firm | £400–600 | £75/month |
+| Charity or community group | £200–350 | £40/month |
+| Estate agent / letting agent | £500–700 | £100/month |
+
+**Running cost: ~$0.57/month. Client value: £300–700 setup + retainer. That margin is the model.**
 
 ---
 
 ## Screenshots
 
-**Live website with HTTPS:**
+**Live website with HTTPS padlock:**
 ![Live Website](day13-live-website.png)
 
-**CloudFront distribution — Enabled:**
-![CloudFront](day13-cloudfront-deployed.png)
+**CloudFront — Enabled:**
+![CloudFront](day13-cloudfront-enabled.png)
 
 **ACM Certificate — Issued:**
 ![ACM](day13-acm-issued.png)
@@ -143,21 +213,4 @@ The same setup used by enterprise static websites.
 ![Route 53](day13-route53-records.png)
 
 **Architecture diagram:**
-![Architecture](day13-architecture.png)
-
----
-
-## Business Value
-
-This same architecture pattern can be sold to UK SMEs as a managed service:
-
-- A local restaurant wanting a fast, professional static website: £300–500 setup
-- A solicitor firm wanting their brochure site with no server management: £400–600 setup
-- A charity wanting reliable low-cost hosting: £200–350 setup
-
-Monthly managed hosting and support: £50–100/month per client.
-
-The architecture is enterprise-grade but costs under £1/month to run.  
-That margin is the business model.
-
-**Post-ILR freelance value: £300–600 per client deployment**
+![Architecture](day13-architecture.svg)
