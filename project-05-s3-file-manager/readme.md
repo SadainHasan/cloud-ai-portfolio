@@ -31,10 +31,19 @@ deleted automatically at the 1-year mark. This configuration saves approximately
 on storage costs compared to keeping everything in S3 Standard.
 
 ## Screenshots
-- `day15-s3-upload-complete.png` — 10 test files uploaded
-- `day15-lifecycle-rule-config.png` — Lifecycle rule configuration
-- `day15-versioning-two-versions.png` — Two versions of same file
-- `day15-delete-marker.png` — DELETE marker showing soft-delete behaviour
+
+### S3 Bucket with 10 Test Files Uploaded
+![10 test files uploaded to S3 bucket](./screenshots/day15-s3-upload-complete.png)
+*The S3 bucket after uploading all 10 test files. All objects are in S3 Standard storage class at this point.*
+
+### Lifecycle Rule Configuration
+![Lifecycle rule configured in AWS Console](./screenshots/day15-lifecycle-rule-config.png)
+*The lifecycle rule named `archive-old-files` showing the three transitions: Standard → Standard-IA at 30 days → Glacier Flexible Retrieval at 90 days → Expiration at 365 days.*
+
+### Two Versions of the Same File
+![Two versions of file01.txt visible in S3](./screenshots/day15-versioning-two-versions.png)
+*After enabling versioning and re-uploading `file01.txt`, both versions are visible using the Show Versions toggle. Each version has a unique Version ID and its own last-modified timestamp.*
+
 
 ## Skills Demonstrated
 AWS S3 | Storage Classes | Lifecycle Management | Versioning | Encryption | Cost Optimisation
