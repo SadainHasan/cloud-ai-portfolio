@@ -496,6 +496,33 @@ and workflow building
 **Anki cards added:** Cards 60–62
 **Deck total: 62 cards** ✅
 ---
+## Day 15 — Friday 15 May 2026
+**Topic:** AWS S3 — Storage Classes, Lifecycle Rules, Versioning
+**Category:** AWS / CLOUD (Blue day)
+**Time spent:** 90 min
+
+**What I did:**
+- Watched S3 section of DCT SAA course
+- Created S3 bucket `hasan-s3-lifecycle-demo-2026` in eu-west-2
+- Uploaded 10 test files
+- Configured lifecycle rule: Standard → IA (30d) → Glacier (90d) → Delete (365d)
+- Enabled versioning and tested with a re-upload and a delete operation
+- Observed DELETE marker behaviour — soft delete with versioning enabled
+- Started Project 5 on GitHub
+
+**Key things I learned:**
+- 6 S3 storage classes and when to use each
+- Lifecycle rules are XML applied at bucket level — configured via console
+- Objects must be in Standard for 30 days before transitioning to IA
+- Objects smaller than 128KB do not benefit from IA transition
+- Versioning cannot be disabled once enabled — only suspended
+- DELETE with versioning = DELETE marker, not permanent deletion
+
+**What I am still unsure about:**
+- 
+
+**Anki cards added:** 3 (Running total: ~66)
+**GitHub commits:** 2
 
 ## Certification Progress
 
@@ -515,7 +542,7 @@ and workflow building
 |---|---|---|
 | Week 1 | 1 | 29 |
 | Week 2 | 30 | 62 |
-| Week 3 | 63 | 63 |
+| Week 3 | 63 | 66 |
 ---
 
 ## GitHub Projects
@@ -525,6 +552,7 @@ and workflow building
 | project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront deployed |
 | project-02-ec2-auto-scaling | 🔄 In progress | Week 1 | AMI created, diagram added |
 | project-03-vpc-network | 🔄 In progress | Week 2 | VPC + 4 subnets + IGW built |
+| project-05-s3-filr-manager | ✅ Built | Week 3 | 2 workflows live and tested |
 | project-06-n8n-automation | ✅ Built | Week 2 | 2 workflows live and tested |
 | project-07-cloudflow-website  | ✅ Live | Week 2 | AWS Cloud — S3 + CloudFront + Route 53 + ACM |
 ---
