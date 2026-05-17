@@ -552,7 +552,7 @@ and workflow building
 | project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront deployed |
 | project-02-ec2-auto-scaling | 🔄 In progress | Week 1 | AMI created, diagram added |
 | project-03-vpc-network | 🔄 In progress | Week 2 | VPC + 4 subnets + IGW built |
-| project-05-s3-filr-manager | ✅ Built | Week 3 | 2 workflows live and tested |
+| project-05-s3-filr-manager | ✅ Built | Week 3 | Amazon S3, Lifecycle Rules, Versioning, SSE-S3 Encryption |
 | project-06-n8n-automation | ✅ Built | Week 2 | 2 workflows live and tested |
 | project-07-cloudflow-website  | ✅ Live | Week 2 | AWS Cloud — S3 + CloudFront + Route 53 + ACM |
 ---
