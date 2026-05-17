@@ -572,7 +572,7 @@ Day 17 — BUILD PROJECT — Python + boto3 — automate AWS with code
 |---|---|---|
 | Week 1 | 1 | 29 |
 | Week 2 | 30 | 62 |
-| Week 3 | 63 | 66 |
+| Week 3 | 63 | 71 |
 ---
 
 ## GitHub Projects
