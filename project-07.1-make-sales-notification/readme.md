@@ -326,43 +326,43 @@ patterns click faster when you study them. The mental model is identical.
 ## Screenshots
 
 ### Make.com Dashboard
-![Make.com account dashboard](screenshots/day16-project71-make-account-dashboard.png)
+![Make.com account dashboard](day16-project71-make-account-dashboard.png)
 
 ### Slack Channel Created
-![sales-team Slack channel created](screenshots/day16-project71-slack-channel-created.png)
+![sales-team Slack channel created](day16-project71-slack-channel-created.png)
 
 ### Google Sheets Prospects Setup
-![Prospects spreadsheet with headers and sample row](screenshots/day16-project71-google-sheet-setup.png)
+![Prospects spreadsheet with headers and sample row](day16-project71-google-sheet-setup.png)
 
 ### Scenario Builder
-![Make.com scenario builder canvas](screenshots/day16-project71-scenario-builder.png)
+![Make.com scenario builder canvas](day16-project71-scenario-builder.png)
 
 ### Google Sheets Trigger Module
-![Google Sheets Watch New Rows trigger configured](screenshots/day16-project71-google-sheets-module.png)
+![Google Sheets Watch New Rows trigger configured](day16-project71-google-sheets-module.png)
 
 ### Google Connection Created
-![OAuth2 connection to Google authorised](screenshots/day16-project71-connection-created.png)
+![OAuth2 connection to Google authorised](day16-project71-connection-created.png)
 
 ### Trigger Configured
-![Trigger settings — Prospects spreadsheet, Sheet1, limit 20](screenshots/day16-project71-trigger-configured.png)
+![Trigger settings — Prospects spreadsheet, Sheet1, limit 20](day16-project71-trigger-configured.png)
 
 ### Module Test Output
-![Test run output showing prospect bundle data](screenshots/day16-project71-module-test-output.png)
+![Test run output showing prospect bundle data](day16-project71-module-test-output.png)
 
 ### Slack Module Added
-![Slack Send a Message module added and connected](screenshots/day16-project71-slack-module-added.png)
+![Slack Send a Message module added and connected](day16-project71-slack-module-added.png)
 
 ### Data Mapping
-![Slack message with all 6 Google Sheets fields mapped](screenshots/day16-project71-data-mapped.png)
+![Slack message with all 6 Google Sheets fields mapped](day16-project71-data-mapped.png)
 
 ### Successful Test Run
-![Both modules showing green output bubbles](screenshots/day16-project71-test-run-success.png)
+![Both modules showing green output bubbles](day16-project71-test-run-success.png)
 
 ### Slack Notification Received
-![Formatted notification in Slack sales-team channel](screenshots/day16-project71-slack-notification-received.png)
+![Formatted notification in Slack sales-team channel](day16-project71-slack-notification-received.png)
 
 ### Scenario Live
-![Scenario toggled On and running](screenshots/day16-project71-scenario-live.png)
+![Scenario toggled On and running](day16-project71-scenario-live.png)
 
 ---
 
