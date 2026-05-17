@@ -257,7 +257,7 @@ Google Forms once per day.
 - Plan: Free (1,000 operations/month)
 - Scenario: Enquiry Form Handler — Google Forms to Email
 - Trigger: Google Forms — Watch Responses (polling, every 15 minutes)
-- Action: Email — Send an Email (Make.com relay)
+- Action: Gmail — Send an Email
 - Operations per enquiry: 2 (1 trigger check + 1 email send)
 - Connection: Reused Google OAuth2 from Project 07.1
 
@@ -268,8 +268,7 @@ Google Forms once per day.
 - Cost: Free
 
 ### Gmail
-- Delivery: Make.com built-in relay
-- Cost: Included in free tier
+- Delivery: Using Gmail
 
 ---
 
@@ -330,9 +329,6 @@ Google Forms once per day.
 ### Google Forms Trigger Module
 ![Google Forms Watch Responses trigger configured](day16-project72-google-forms-module.png)
 
-### Gmail Module Connected
-![Gmail module added with Google connection authorised](day16-project72-gmail-module-connected.png)
-
 ### Data Mapping
 ![Gmail module with all fields mapped using textAnswers value path](day16-project72-email-module-mapped.png)
 
@@ -342,8 +338,7 @@ Google Forms once per day.
 ### Email Received in Inbox
 ![Formatted notification email received with correct client data](day16-project72-email-received-inbox.png)
 
-### Scenario Live
-![Scenario toggled On and running every 15 minutes](day16-project72-scenario-live.png)
+
 
 ---
 
