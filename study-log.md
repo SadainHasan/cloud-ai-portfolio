@@ -492,6 +492,9 @@ and workflow building
 **Deck total: 59 cards** ✅
 
 ---
+### Day 14
+**Anki cards added:** Cards 60–62
+**Deck total: 62 cards** ✅
 ---
 
 ## Certification Progress
@@ -511,7 +514,8 @@ and workflow building
 | Week | Cards added | Total deck |
 |---|---|---|
 | Week 1 | 1 | 29 |
-| Week 2 | 30 | 59 |
+| Week 2 | 30 | 62 |
+| Week 3 | 63 | 63 |
 ---
 
 ## GitHub Projects
