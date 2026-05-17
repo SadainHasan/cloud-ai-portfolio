@@ -524,6 +524,36 @@ and workflow building
 **Anki cards added:** 3 (Running total: ~66)
 **GitHub commits:** 2
 
+---
+
+## Day 16 — Saturday 16 May 2026
+
+**Topic:** Make.com — Visual Automation Workflows
+**Category:** PURPLE — AI / Claude
+**Time spent:** 90 minutes
+**Week:** 3, Day 2
+
+### What I built today
+- Project 07.1: Google Sheets → Slack sales notification (Make.com official tutorial)
+- Project 07.2: Google Forms → Gmail enquiry automation
+
+### Key things I learned
+- Make.com core vocabulary: Scenario, Module, Operation, Bundle, Trigger, Action
+- Polling triggers vs instant/webhook triggers and when to use each
+- Data mapping syntax: {{module_number.field_name}}
+- How credits are consumed: trigger = 1 credit/run; action = 1 credit/bundle
+- Practical difference between n8n (power/privacy) and Make.com (simplicity/client-friendly)
+
+### What confused me
+- Credit consumption difference between trigger and action modules
+- How to choose between polling and webhook triggers for a given client
+
+### Tomorrow
+Day 17 — BUILD PROJECT — Python + boto3 — automate AWS with code
+
+
+---
+
 ## Certification Progress
 
 | Certification | Target | Status |
