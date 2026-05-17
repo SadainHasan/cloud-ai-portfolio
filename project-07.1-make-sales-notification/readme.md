@@ -325,9 +325,6 @@ patterns click faster when you study them. The mental model is identical.
 
 ## Screenshots
 
-### Make.com Dashboard
-![Make.com account dashboard](day16-project71-make-account-dashboard.png)
-
 ### Slack Channel Created
 ![sales-team Slack channel created](day16-project71-slack-channel-created.png)
 
@@ -351,15 +348,6 @@ patterns click faster when you study them. The mental model is identical.
 
 ### Slack Module Added
 ![Slack Send a Message module added and connected](day16-project71-slack-module-added.png)
-
-### Data Mapping
-![Slack message with all 6 Google Sheets fields mapped](day16-project71-data-mapped.png)
-
-### Successful Test Run
-![Both modules showing green output bubbles](day16-project71-test-run-success.png)
-
-### Slack Notification Received
-![Formatted notification in Slack sales-team channel](day16-project71-slack-notification-received.png)
 
 ### Scenario Live
 ![Scenario toggled On and running](day16-project71-scenario-live.png)
