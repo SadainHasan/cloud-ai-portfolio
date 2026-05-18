@@ -257,7 +257,6 @@ the report, not automated without oversight.
 
 ![cost_audit.py full report output](day17-project08-cost-audit-output.png)
 
-![GitHub push — all scripts committed](day17-github-push.png)
 
 ---
 
