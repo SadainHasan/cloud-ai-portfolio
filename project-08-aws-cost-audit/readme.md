@@ -243,6 +243,8 @@ the report, not automated without oversight.
 
 ## Screenshots
 
+## Screenshots
+
 ![Python installed and version verified](day17-python-installed.png)
 
 ![boto3 installed via pip](day17-boto3-installed.png)
