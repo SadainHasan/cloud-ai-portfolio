@@ -243,25 +243,25 @@ the report, not automated without oversight.
 
 ## Screenshots
 ### Python installed and version verified
-![Python installed and version verified](screenshots/day17-python-installed.png)
+![Python installed and version verified](day17-python-installed.png)
 
 ### boto3 installed via pip
-![boto3 installed via pip](screenshots/day17-boto3-installed.png)
+![boto3 installed via pip](day17-boto3-installed.png)
 
 ### AWS CLI configured with IAM credentials
-![AWS CLI configured with IAM credentials](screenshots/day17-aws-configure.png)
+![AWS CLI configured with IAM credentials](day17-aws-configure.png)
 
 ### list_ec2.py output showing EC2 instances
-![list_ec2.py output showing EC2 instances](screenshots/day17-list-ec2-output.png)
+![list_ec2.py output showing EC2 instances](day17-list-ec2-output.png)
 
 ### list_s3.py output showing S3 buckets
-![list_s3.py output showing S3 buckets](screenshots/day17-list-s3-output.png)
+![list_s3.py output showing S3 buckets](day17-list-s3-output.png)
 
 ### create_bucket.py output confirming bucket created
-![create_bucket.py output confirming bucket created](screenshots/day17-create-bucket-output.png)
+![create_bucket.py output confirming bucket created](day17-create-bucket-output.png)
 
 ### cost_audit.py full report output
-![cost_audit.py full report output](screenshots/day17-project08-cost-audit-output.png)
+![cost_audit.py full report output](day17-project08-cost-audit-output.png)
 
 
 ---
