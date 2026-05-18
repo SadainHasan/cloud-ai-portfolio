@@ -548,8 +548,34 @@ and workflow building
 - Credit consumption difference between trigger and action modules
 - How to choose between polling and webhook triggers for a given client
 
+---
+## Day 17 — Sunday 17 May 2026
+
+**Topic:** Python + boto3 — Automate AWS with Code
+**Category:** GREEN — Build Project
+**Time spent:** 90 minutes
+**Week:** 3, Day 3
+
+### What I built
+- list_ec2.py — lists all EC2 instances with state
+- list_s3.py — lists all S3 buckets
+- create_bucket.py — creates a bucket programmatically
+- cost_audit.py — Project 08, flags stopped EC2 instances > 7 days
+
+### Key things I learned
+- boto3 uses the same credentials as the AWS CLI (~/.aws/credentials)
+- describe_instances() returns Reservations → Instances (nested structure)
+- IAM least privilege: boto3-scripts user has only the permissions it needs
+- Never use root credentials in scripts — always use a dedicated IAM user
+- S3 bucket creation requires LocationConstraint for any region outside us-east-1
+
+### What confused me
+- Why does S3 need LocationConstraint but EC2 just needs region_name?
+- How to paginate describe_instances for accounts with many instances
+
+---
 ### Tomorrow
-Day 17 — BUILD PROJECT — Python + boto3 — automate AWS with code
+Day 18 — REVISION — Week 3 full revision: S3 and Python
 
 
 ---
@@ -572,7 +598,7 @@ Day 17 — BUILD PROJECT — Python + boto3 — automate AWS with code
 |---|---|---|
 | Week 1 | 1 | 29 |
 | Week 2 | 30 | 62 |
-| Week 3 | 63 | 71 |
+| Week 3 | 63 | 73 |
 ---
 
 ## GitHub Projects
