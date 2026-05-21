@@ -54,7 +54,7 @@ No web servers. No maintenance. Estimated cost approximately £1 per month.
 
 ---
 
-## Planned Architecture
+## Architecture
 [User] → [Route 53 DNS] → [CloudFront CDN] → [S3 Bucket]
 ↑
 [ACM SSL Certificate]
@@ -62,7 +62,7 @@ No web servers. No maintenance. Estimated cost approximately £1 per month.
 
 ---
 
-## AWS Services Planned
+## AWS Services Used
 
 | Service | Purpose |
 |---|---|
