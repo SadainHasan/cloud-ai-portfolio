@@ -574,8 +574,34 @@ and workflow building
 - How to paginate describe_instances for accounts with many instances
 
 ---
-### Tomorrow
-Day 18 — REVISION — Week 3 full revision: S3 and Python
+## Day 18 — Monday 18 May 2026
+### Topic: TEAL — Week 3 Full Revision (S3 + Python)
+
+**What I revised:**
+- S3 storage classes and minimum storage durations
+- Versioning behaviour with delete markers
+- MFA Delete — root-only, cannot be enabled by IAM users
+- SRR vs CRR — both are valid since 2019
+- S3 Object Lock — WORM, Governance vs Compliance mode
+- boto3: list_buckets, list_objects_v2, upload_file, download_file
+
+**ExamTopics practice: 15 questions**
+- Score: [fill in] / 15
+- Weak areas: [fill in]
+
+**Python from memory:**
+- list_buckets: [ ✅ / ❌ ]
+- list_objects: [ ✅ / ❌ ]
+- upload_file:  [ ✅ / ❌ ]
+- download_file: [ ✅ / ❌ ]
+
+**Portfolio work:**
+- Added list_objects.py to Project 05 (S3 File Manager)
+- Script uses pagination — handles buckets with 1000+ objects
+- Added error handling for AccessDenied and NoSuchBucket
+
+**Anki cards added:** 2 (Cards 74–75)
+**Running deck total:** 75 cards
 
 
 ---
