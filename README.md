@@ -5,6 +5,7 @@ MSc Cloud Computing — University of Leicester
 FAVP-level IT Leadership (13 years) — Trust Bank Investment Ltd, Bangladesh
 
 🌐 **Portfolio site:** https://d2ven7lubrbrhs.cloudfront.net
+🏢 **Business site:** https://cloudflowautomations.co.uk
 💻 **GitHub:** https://github.com/SadainHasan
 
 ---
@@ -20,12 +21,25 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 
 ---
 
+## Current Progress
+
+| Item | Detail |
+|---|---|
+| 📅 Current day | Day 18 of 730 |
+| 📆 Current week | Week 3 — AWS S3 Deep Dive + Python boto3 + Make.com |
+| 🗓️ Last updated | Monday 18 May 2026 |
+| 🃏 Anki deck | 75 cards |
+| 🏗️ Projects built | 6 |
+| 🎯 Next milestone | AWS SAA-C03 — October 2026 |
+
+---
+
 ## Certifications
 
 | Certification | Target Date | Status |
 |---|---|---|
 | AWS Cloud Practitioner (CLF-C02) | January 2022 | ✅ Certified (expired Jan 2025) |
-| AWS SAA (SAA-C03) | October 2026 | 🔄 In progress |
+| AWS SAA-C03 | October 2026 | 🔄 In progress — Week 3 of 27 |
 | AZ-104 Azure Administrator | January 2027 | ⏳ Planned |
 | AWS Solutions Architect Professional (CSAP) | April 2027 | ⏳ Planned |
 | HashiCorp Terraform Associate | May 2027 | ⏳ Planned |
@@ -34,14 +48,32 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 
 ## Projects
 
-| # | Project | Services | Status |
-|---|---|---|---|
-| 01 | Static Portfolio Website | S3, CloudFront, ACM | ✅ Live |
-| 02 | EC2 Auto-Scaling Web Server | EC2, ALB, ASG, EBS | 🔄 In progress |
-| 03 | Custom VPC Network | VPC, Subnets, IGW, NAT Gateway, Security Groups, NACLs | 🔄 In progress |
-| 06 | project-06-n8n-automation | ✅ Built | Week 2 | 2 workflows live and tested |
+| # | Project | AWS / Tools | Status | Week |
+|---|---|---|---|---|
+| 01 | [Static Portfolio Website](./project-01-portfolio-site/) | S3, CloudFront, ACM | ✅ Live | Week 1 |
+| 02 | [EC2 Auto-Scaling Web Server](./project-02-ec2-auto-scaling/) | EC2, ALB, ASG, EBS | 🔄 In progress | Week 1 |
+| 03 | [Custom VPC Network](./project-03-vpc-network/) | VPC, Subnets, IGW, NAT Gateway, Security Groups, NACLs | ✅ Complete | Week 2 |
+| 05 | [S3 File Manager + Python Audit](./project-05-s3-file-manager/) | S3, Python, boto3 | ✅ Built | Week 3 |
+| 06 | [n8n Automation Workflows](./project-06-n8n-automation/) | n8n, OpenAI API, Google Sheets | ✅ 3 workflows live | Week 2 |
+| 07 | [Cloudflow Automations Website](./project-07-cloudflow-website/) | S3, CloudFront, Route 53, ACM | ✅ Live | Week 3 |
 
 *(Projects added weekly as the plan progresses)*
+
+---
+
+## Week 3 Progress — 15–21 May 2026
+
+| Day | Date | Topic | Category | Status |
+|---|---|---|---|---|
+| Day 15 | Fri 15 May | S3 deep dive — storage classes, lifecycle rules, versioning | 🔵 AWS | ✅ Complete |
+| Day 16 | Sat 16 May | Make.com — visual automation workflows | 🟣 AI/Claude | ✅ Complete |
+| Day 17 | Sun 17 May | Python + boto3 — automate AWS with code | 🟢 Build | ✅ Complete |
+| Day 18 | Mon 18 May | Week 3 revision — S3 and Python | 🩵 Revision | ✅ Complete |
+| Day 19 | Tue 19 May | Claude API — building AI-powered tools | 🟣 AI/Claude | ⬜ Upcoming |
+| Day 20 | Wed 20 May | Lambda functions — serverless computing | 🔵 AWS | ⬜ Upcoming |
+| Day 21 | Thu 21 May | Project 4 — Serverless contact form (API Gateway + Lambda + SES) | 🟢 Build | ⬜ Upcoming |
+
+**Week 3 milestone:** S3 lifecycle rules ✅ · Python boto3 ✅ · Make.com ✅ · Claude API · Lambda · Project 4 Serverless
 
 ---
 
@@ -63,6 +95,16 @@ Study notes and reference guides built during the 24-month roadmap.
 | [prompting-notes.md](./prompting-notes.md) | AI Prompt Engineering | 5 core prompting techniques — Direct, Role-Based, Chain-of-Thought, Format-Specific, Iterative Refinement |
 
 *(Notes added weekly — covering AWS, Azure, Python, Terraform, AI Automation)*
+
+---
+
+## Anki Progress
+
+| Week | Cards Added | Running Total | Topic Focus |
+|---|---|---|---|
+| Week 1 (Days 1–7) | 29 | 29 | EC2, ASG, ELB, AMI, EBS |
+| Week 2 (Days 8–14) | 33 | 62 | VPC, NAT, SG, NACLs, n8n, S3 |
+| Week 3 (Days 15–18) | 13 | 75 | S3 storage classes, boto3, Well-Architected Framework |
 
 ---
 
