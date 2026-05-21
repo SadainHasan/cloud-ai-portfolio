@@ -84,10 +84,10 @@ costs scale with actual usage, zero downtime on failure.
 ---
 ## Screenshot
 
-![EC2 Running Instance]
+EC2 Running Instance
 <img width="1621" height="171" alt="ec2-running png" src="https://github.com/user-attachments/assets/57852336-23f0-4f65-bfef-ab635543eece" />
 
-![EC2 Running Instance](connect-ec2-running.png)
+EC2 Running Instance
 <img width="860" height="239" alt="connect-ec2-running" src="https://github.com/user-attachments/assets/f830c4f9-c23a-4d16-8134-29675b64e799" />
 
 ---
