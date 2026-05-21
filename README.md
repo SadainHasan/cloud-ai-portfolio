@@ -29,7 +29,7 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 | 📆 Current week | Week 3 — AWS S3 Deep Dive + Python boto3 + Make.com |
 | 🗓️ Last updated | Monday 18 May 2026 |
 | 🃏 Anki deck | 75 cards |
-| 🏗️ Projects built | 6 |
+| 🏗️ Projects built | 9 |
 | 🎯 Next milestone | AWS SAA-C03 — October 2026 |
 
 ---
@@ -54,8 +54,11 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 | 02 | [EC2 Auto-Scaling Web Server](./project-02-ec2-auto-scaling/) | EC2, ALB, ASG, EBS | 🔄 In progress | Week 1 |
 | 03 | [Custom VPC Network](./project-03-vpc-network/) | VPC, Subnets, IGW, NAT Gateway, Security Groups, NACLs | ✅ Complete | Week 2 |
 | 05 | [S3 File Manager + Python Audit](./project-05-s3-file-manager/) | S3, Python, boto3 | ✅ Built | Week 3 |
-| 06 | [n8n Automation Workflows](./project-06-n8n-automation/) | n8n, OpenAI API, Google Sheets | ✅ 3 workflows live | Week 2 |
+| 06 | [n8n Automation Workflows](./project-06-n8n-business-automation/) | n8n, OpenAI API, Google Sheets | ✅ 3 workflows live | Week 2 |
 | 07 | [Cloudflow Automations Website](./project-07-cloudflow-website/) | S3, CloudFront, Route 53, ACM | ✅ Live | Week 3 |
+| 07.1 | [Make.com — Sales Notification](./project-07.1-make-sales-notification/) | Make.com, Google Sheets, Slack | ✅ Built | Week 3 |
+| 07.2 | [Make.com — Enquiry Automation](./project-07.2-make-enquiry-automation/) | Make.com, Google Forms, Gmail | ✅ Built | Week 3 |
+| 08 | [AWS Cost Audit Tool](./project-08-aws-cost-audit/) | Python, boto3, EC2, S3 | ✅ Built | Week 3 |
 
 *(Projects added weekly as the plan progresses)*
 
