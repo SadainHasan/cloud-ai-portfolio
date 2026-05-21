@@ -1,6 +1,6 @@
 # Project 05 — S3 File Manager with Lifecycle Rules
 
-**Status:** In Progress  
+**Status:** ✅ Complete  
 **Week:** 3 | **Date Started:** 15 May 2026  
 **AWS Services:** Amazon S3, Lifecycle Rules, Versioning, SSE-S3 Encryption
 
