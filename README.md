@@ -25,11 +25,11 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 
 | Item | Detail |
 |---|---|
-| 📅 Current day | Day 18 of 730 |
-| 📆 Current week | Week 3 — AWS S3 Deep Dive + Python boto3 + Make.com |
-| 🗓️ Last updated | Monday 18 May 2026 |
-| 🃏 Anki deck | 75 cards |
-| 🏗️ Projects built | 9 |
+| 📅 Current day | Day 19 of 730 |
+| 📆 Current week | Week 3 — S3 + Python boto3 + Make.com + Claude API |
+| 🗓️ Last updated | Tuesday 19 May 2026 |
+| 🃏 Anki deck | 80 cards |
+| 🏗️ Projects built | 10 |
 | 🎯 Next milestone | AWS SAA-C03 — October 2026 |
 
 ---
@@ -59,6 +59,7 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 | 07.1 | [Make.com — Sales Notification](./project-07.1-make-sales-notification/) | Make.com, Google Sheets, Slack | ✅ Built | Week 3 |
 | 07.2 | [Make.com — Enquiry Automation](./project-07.2-make-enquiry-automation/) | Make.com, Google Forms, Gmail | ✅ Built | Week 3 |
 | 08 | [AWS Cost Audit Tool](./project-08-aws-cost-audit/) | Python, boto3, EC2, S3 | ✅ Built | Week 3 |
+| 09 | [Claude API Study Assistant](./project-06-n8n-business-automation/claude-api/) | Anthropic Claude API, Python | ✅ Built | Week 3 |
 
 *(Projects added weekly as the plan progresses)*
 
@@ -72,11 +73,11 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 | Day 16 | Sat 16 May | Make.com — visual automation workflows | 🟣 AI/Claude | ✅ Complete |
 | Day 17 | Sun 17 May | Python + boto3 — automate AWS with code | 🟢 Build | ✅ Complete |
 | Day 18 | Mon 18 May | Week 3 revision — S3 and Python | 🩵 Revision | ✅ Complete |
-| Day 19 | Tue 19 May | Claude API — building AI-powered tools | 🟣 AI/Claude | ⬜ Upcoming |
+| Day 19 | Tue 19 May | Claude API — building AI-powered tools | 🟣 AI/Claude | ✅ Complete |
 | Day 20 | Wed 20 May | Lambda functions — serverless computing | 🔵 AWS | ⬜ Upcoming |
 | Day 21 | Thu 21 May | Project 4 — Serverless contact form (API Gateway + Lambda + SES) | 🟢 Build | ⬜ Upcoming |
 
-**Week 3 milestone:** S3 lifecycle rules ✅ · Python boto3 ✅ · Make.com ✅ · Claude API · Lambda · Project 4 Serverless
+**Week 3 milestone:** S3 lifecycle rules ✅ · Python boto3 ✅ · Make.com ✅ · Claude API ✅ · Lambda · Project 4 Serverless
 
 ---
 
@@ -108,6 +109,7 @@ Study notes and reference guides built during the 24-month roadmap.
 | Week 1 (Days 1–7) | 29 | 29 | EC2, ASG, ELB, AMI, EBS |
 | Week 2 (Days 8–14) | 33 | 62 | VPC, NAT, SG, NACLs, n8n, S3 |
 | Week 3 (Days 15–18) | 13 | 75 | S3 storage classes, boto3, Well-Architected Framework |
+| Week 3 (Day 19) | 5 | 80 | Claude API, system prompts, API errors, API key security, max_tokens |
 
 ---
 
