@@ -1,59 +1,59 @@
 # Claude API Study Assistant
 
-**Status:** ✅ Live — Command-line tool
-**Built:** Tuesday 19 May 2026
-**Author:** Hasan (Khandaker Sadain Hasan) — Cloud + AI Automation Consultant
-**GitHub:** https://github.com/SadainHasan/cloud-ai-portfolio
-**Portfolio site:** https://d2ven7lubrbrhs.cloudfront.net
+**Status:** ✅ Live — Command-line tool  
+**Built:** Tuesday 19 May 2026  
+**Author:** Hasan (Khandaker Sadain Hasan) — Cloud + AI Automation Consultant  
+**GitHub:** https://github.com/SadainHasan/cloud-ai-portfolio  
+**Portfolio site:** https://d2ven7lubrbrhs.cloudfront.net  
 **Business:** https://cloudflowautomations.co.uk
 
 ---
 
 ## What Problem Does This Solve?
 
-Every small business owner or team leader who wants to use AI in their workflows 
-faces the same problem: they can use Claude.ai in a browser, but they cannot 
-integrate it into their own systems, scripts, or automations. The Claude API 
+Every small business owner or team leader who wants to use AI in their workflows
+faces the same problem: they can use Claude.ai in a browser, but they cannot
+integrate it into their own systems, scripts, or automations. The Claude API
 bridges that gap — it turns Claude from a chatbot into a programmable tool.
 
 For an SME owner, this unlocks scenarios like:
 
-- A letting agent who wants to auto-draft tenancy agreement summaries when a 
+- A letting agent who wants to auto-draft tenancy agreement summaries when a
   new contract PDF arrives
-- A clinic manager who wants patient intake forms processed and categorised 
+- A clinic manager who wants patient intake forms processed and categorised
   automatically
-- A warehouse team who wants inbound delivery emails parsed and logged to 
+- A warehouse team who wants inbound delivery emails parsed and logged to
   a spreadsheet without manual data entry
 
-This study assistant is a simple but real demonstration of that capability. 
-It shows that Claude can be given a specific persona, domain expertise, and 
-output format — and then called programmatically from any Python script, 
+This study assistant is a simple but real demonstration of that capability.
+It shows that Claude can be given a specific persona, domain expertise, and
+output format — and then called programmatically from any Python script,
 n8n workflow, or automation pipeline.
 
-The business value is not the study assistant itself. The business value is 
-that this code pattern — system prompt + user input + structured response — 
+The business value is not the study assistant itself. The business value is
+that this code pattern — system prompt + user input + structured response —
 is the foundation of every AI-powered tool in the portfolio.
 
 ---
 
 ## What This Is
 
-A command-line Python application that wraps the Anthropic Claude API in a 
-specialist persona for AWS SAA-C03 exam coaching. The user types a cloud 
-computing question, the script sends it to Claude with a carefully crafted 
-system prompt, and Claude responds as "AWS Maya" — an exam-focused tutor 
+A command-line Python application that wraps the Anthropic Claude API in a
+specialist persona for AWS SAA-C03 exam coaching. The user types a cloud
+computing question, the script sends it to Claude with a carefully crafted
+system prompt, and Claude responds as "AWS Maya" — an exam-focused tutor
 who connects concepts to banking and financial services analogies.
 
 The project demonstrates two skills clients pay for:
 
-1. **API integration** — calling a third-party AI service from Python with 
+1. **API integration** — calling a third-party AI service from Python with
    proper authentication, error handling, and model selection
-2. **Prompt engineering** — crafting a system prompt that shapes Claude's 
-   persona, output format, and domain expertise to produce consistent, 
+2. **Prompt engineering** — crafting a system prompt that shapes Claude's
+   persona, output format, and domain expertise to produce consistent,
    useful responses
 
-Both scripts in this folder are production-quality: they read API keys from 
-environment variables (never hardcoded), handle API errors gracefully, and 
+Both scripts in this folder are production-quality: they read API keys from
+environment variables (never hardcoded), handle API errors gracefully, and
 include clear comments explaining every design decision.
 
 ---
@@ -66,7 +66,7 @@ User (terminal)
       ▼
 claude_study_assistant.py
       │
-      │  1. Reads ANTHROPIC_API_KEY from environment
+      │  1. Reads ANTHROPIC_API_KEY from environment variable
       │  2. Sends system prompt + user question via HTTPS
       ▼
 Anthropic API
@@ -83,8 +83,8 @@ claude_study_assistant.py
 User sees answer
 ```
 
-**No AWS resources required.** This project runs entirely on your local 
-machine using the Anthropic API. The only external dependency is the 
+**No AWS resources required.** This project runs entirely on your local
+machine using the Anthropic API. The only external dependency is the
 `anthropic` Python library and an active API key.
 
 ---
@@ -95,6 +95,7 @@ machine using the Anthropic API. The only external dependency is the
 |------|---------|
 | `basic_claude_call.py` | Minimal proof-of-concept — one question, one answer |
 | `claude_study_assistant.py` | Full interactive study assistant with system prompt, error handling, and session logging |
+| `study-log.md` | Session notes including problems faced and how they were resolved |
 
 ---
 
@@ -117,48 +118,53 @@ machine using the Anthropic API. The only external dependency is the
 6. Copy the key — it starts with `sk-ant-api03-`
 7. You will only see it once. Copy it now.
 
-**Security rule:** Never paste this key directly into Python code. 
+**Security rule:** Never paste this key directly into Python code.
 Never commit it to GitHub. Always use environment variables.
 
 ### Step 2 — Store Key as Environment Variable
 
-**Windows (temporary, current session only):**
-```cmd
-set ANTHROPIC_API_KEY=sk-ant-api03-your-key-here
+**Windows PowerShell (current session only):**
+```powershell
+$env:ANTHROPIC_API_KEY = "sk-ant-api03-your-key-here"
 ```
 
-**Windows (permanent, all future sessions):**
-1. Search "Environment Variables" in Windows Start menu
-2. Click "Edit the system environment variables"
-3. Click "Environment Variables..."
-4. Under "User variables", click "New"
-5. Variable name: `ANTHROPIC_API_KEY`
-6. Variable value: paste your key
-7. Click OK three times
+**Verify it was set:**
+```powershell
+echo $env:ANTHROPIC_API_KEY
+```
+
+**Windows PowerShell (permanent — survives restarts):**
+```powershell
+[System.Environment]::SetEnvironmentVariable("ANTHROPIC_API_KEY", "sk-ant-api03-your-key", "User")
+```
+
+> ⚠️ Important: `set ANTHROPIC_API_KEY=value` and `echo %ANTHROPIC_API_KEY%`
+> are **cmd.exe syntax only** — they do NOT work in PowerShell. Always use
+> the `$env:` prefix in PowerShell.
 
 ### Step 3 — Install the SDK
 
-```cmd
+```powershell
 pip install anthropic
 ```
 
 Verify:
-```cmd
+```powershell
 pip show anthropic
 ```
 
 ### Step 4 — Run the Basic Script
 
-```cmd
+```powershell
 python basic_claude_call.py
 ```
 
-Expected output: Claude's explanation of S3 lifecycle rules in 3 bullet points, 
+Expected output: Claude's explanation of S3 lifecycle rules in 3 bullet points,
 printed to your terminal within 3-5 seconds.
 
 ### Step 5 — Run the Study Assistant
 
-```cmd
+```powershell
 python claude_study_assistant.py
 ```
 
@@ -180,23 +186,23 @@ At the end of the session, you can save a log file of all your questions and ans
 
 ### Why claude-haiku-4-5-20251001 and not a larger model?
 
-Claude Haiku is the most cost-efficient model in the Anthropic lineup. For a 
-study assistant that asks factual, domain-specific questions with short expected 
-answers, Haiku produces responses that are indistinguishable in quality from 
+Claude Haiku is the most cost-efficient model in the Anthropic lineup. For a
+study assistant that asks factual, domain-specific questions with short expected
+answers, Haiku produces responses that are indistinguishable in quality from
 Sonnet or Opus for this use case. The cost difference is significant:
 
 - Haiku: ~$0.00025 per 1,000 input tokens
 - Sonnet: ~$0.003 per 1,000 input tokens
 - Opus: ~$0.015 per 1,000 input tokens
 
-A typical study question plus system prompt is approximately 300-400 tokens. 
-At 50 questions per session, Haiku costs less than £0.01. Opus would cost 
-roughly 60 times more for identical output quality on this task. Cost-aware 
+A typical study question plus system prompt is approximately 300-400 tokens.
+At 50 questions per session, Haiku costs less than £0.01. Opus would cost
+roughly 60 times more for identical output quality on this task. Cost-aware
 model selection is a skill clients pay for.
 
 ### Why a system prompt?
 
-Without a system prompt, Claude gives generic answers. With the "AWS Maya" 
+Without a system prompt, Claude gives generic answers. With the "AWS Maya"
 system prompt, Claude:
 
 - Flags exam traps explicitly
@@ -204,22 +210,22 @@ system prompt, Claude:
 - Ends every response with a formatted exam tip
 - Stays under 250 words (preventing token waste)
 
-This is prompt engineering — shaping the AI's behaviour through instructions 
-rather than code. It is one of the highest-value skills in AI consulting because 
-it requires no additional infrastructure, just careful thinking about what the 
+This is prompt engineering — shaping the AI's behaviour through instructions
+rather than code. It is one of the highest-value skills in AI consulting because
+it requires no additional infrastructure, just careful thinking about what the
 model should and should not do.
 
 ### Why environment variables for the API key?
 
-API keys are credentials. If you hardcode `api_key="sk-ant-..."` in your Python 
-file and commit that file to GitHub, your key is permanently exposed in git 
-history — even if you delete the line later. Any automated scanner can find it 
-in seconds. Anthropic automatically revokes keys found on GitHub, but the 
+API keys are credentials. If you hardcode `api_key="sk-ant-..."` in your Python
+file and commit that file to GitHub, your key is permanently exposed in git
+history — even if you delete the line later. Any automated scanner can find it
+in seconds. Anthropic automatically revokes keys found on GitHub, but the
 damage (unexpected charges, compromised applications) may already be done.
 
-Environment variables keep credentials out of code entirely. They are also the 
-standard approach used in production AWS environments — Lambda functions, EC2 
-instances, and ECS containers all receive credentials through environment 
+Environment variables keep credentials out of code entirely. They are also the
+standard approach used in production AWS environments — Lambda functions, EC2
+instances, and ECS containers all receive credentials through environment
 variables or IAM roles, never hardcoded.
 
 ### Why handle API errors explicitly?
@@ -229,17 +235,17 @@ The three most common API errors are:
 2. `AuthenticationError` — wrong or expired API key
 3. `RateLimitError` — too many requests in a short time
 
-Without explicit handling, any of these crashes the script with a Python 
-traceback that confuses non-technical users. With explicit handling, the user 
-gets a clear, actionable error message. When you build tools for SME clients, 
-robust error handling is the difference between a professional product and an 
+Without explicit handling, any of these crashes the script with a Python
+traceback that confuses non-technical users. With explicit handling, the user
+gets a clear, actionable error message. When you build tools for SME clients,
+robust error handling is the difference between a professional product and an
 amateur prototype.
 
 ---
 
 ## Exam Relevance (AWS SAA-C03)
 
-This project is not directly tested in the AWS SAA-C03 exam, but it builds 
+This project is not directly tested in the AWS SAA-C03 exam, but it builds
 skills that underpin several exam topic areas:
 
 | Exam Topic | Connection | Likely Scenario |
@@ -253,11 +259,11 @@ skills that underpin several exam topic areas:
 
 ## AWS Services Used
 
-**None** — this project runs entirely on your local machine. No AWS resources 
+**None** — this project runs entirely on your local machine. No AWS resources
 are required or created. The only cost is Anthropic API usage.
 
-This is intentional: it demonstrates that AI capabilities can be added to any 
-workflow without AWS infrastructure, which is often the right answer for small 
+This is intentional: it demonstrates that AI capabilities can be added to any
+workflow without AWS infrastructure, which is often the right answer for small
 SME clients who do not have AWS accounts.
 
 ---
@@ -271,14 +277,14 @@ SME clients who do not have AWS accounts.
 | Python / local machine | £0 | Runs on any laptop |
 | **Total** | **~£0.01 per session** | Cheaper than a cup of tea |
 
-**Cost control:** `max_tokens=600` on the study assistant prevents runaway 
+**Cost control:** `max_tokens=600` on the study assistant prevents runaway
 costs if Claude attempts to write an unexpectedly long answer.
 
 ---
 
 ## Business Value
 
-This project directly maps to a service you can offer to SME clients 
+This project directly maps to a service you can offer to SME clients
 **after ILR is granted in October 2027:**
 
 | Client Type | What They Get | One-Off Setup Fee | Monthly Support |
@@ -288,10 +294,141 @@ This project directly maps to a service you can offer to SME clients
 | Law firms | Legal research assistant for common queries | £600-1,000 | £100-150/month |
 | Letting agencies | Tenant communication drafting tool | £300-500 | £40-60/month |
 
-The underlying pattern is identical to this study assistant: system prompt 
-defines the domain, API call fetches the answer, output is formatted for the 
-client's context. The code complexity is low; the value is in understanding 
+The underlying pattern is identical to this study assistant: system prompt
+defines the domain, API call fetches the answer, output is formatted for the
+client's context. The code complexity is low; the value is in understanding
 the client's domain well enough to write the right system prompt.
+
+---
+
+## Real-World Debugging — Problems Faced on Day 19
+
+These are the actual problems encountered during this session. They are documented
+here because debugging is a real skill, and future employers or clients reviewing
+this portfolio should see that problems were identified, understood, and fixed —
+not hidden.
+
+### Problem 1 — PowerShell vs Command Prompt syntax for environment variables
+
+**What happened:** Ran `set ANTHROPIC_API_KEY=sk-ant-...` and `echo %ANTHROPIC_API_KEY%`
+inside PowerShell. The echo command returned the literal text `%ANTHROPIC_API_KEY%`
+instead of the key value. The API key appeared not to be set.
+
+**Root cause:** Two different shells with incompatible syntax. `set` and `%VAR%`
+are cmd.exe syntax. PowerShell uses `$env:VAR = "value"` and `echo $env:VAR`.
+
+**Fix:**
+```powershell
+$env:ANTHROPIC_API_KEY = "sk-ant-api03-..."
+echo $env:ANTHROPIC_API_KEY
+```
+
+**Transferable lesson:** In banking IT systems, running commands in the wrong
+environment (wrong server, wrong shell, wrong context) causes exactly this class
+of failure — the command appears to work but produces wrong or empty output.
+Always verify which environment you are in before running configuration commands.
+
+---
+
+### Problem 2 — GitHub repo not cloned to local machine
+
+**What happened:** Searched for the cloud-ai-portfolio folder and found nothing.
+The repo existed on GitHub but had never been downloaded to this computer.
+
+**Root cause:** GitHub stores code remotely. `git clone` is the one-time step that
+downloads a working copy to your machine. This had not been done on this computer.
+
+**Fix:**
+```powershell
+cd C:\Users\ranak\Documents
+git clone https://github.com/SadainHasan/cloud-ai-portfolio
+cd cloud-ai-portfolio
+```
+
+**Transferable lesson:** This is the same as the difference between a document
+existing on a shared network drive and having a local copy on your laptop.
+The remote exists, but you need the local copy to work with it.
+
+---
+
+### Problem 3 — PowerShell displays git stderr output as red "errors"
+
+**What happened:** After running `git clone`, PowerShell showed the output in red
+with a `NativeCommandError` label. Looked like the clone had completely failed.
+
+**Root cause:** Git writes all progress and informational messages to stderr rather
+than stdout. PowerShell treats any stderr output as an error and colours it red,
+even when the underlying command succeeded perfectly.
+
+**Fix:** Ignore the red text; verify the actual result:
+```powershell
+dir | findstr portfolio
+```
+The folder was there. The clone had succeeded.
+
+**Transferable lesson:** Error indicators in interfaces are not always accurate.
+In banking systems, monitoring dashboards sometimes flagged warnings for normal
+operational messages. The response is to check the actual system state, not
+react to the colour of the alert.
+
+---
+
+### Problem 4 — Folder name mismatch between day plan and GitHub
+
+**What happened:** The day plan referenced `project-06-n8n-automation` but the
+actual folder on GitHub was named `project-06-n8n-business-automation`.
+
+**Root cause:** The plan document used a shortened version of the folder name.
+
+**Fix:** Used the GitHub folder name throughout. GitHub is always the source of truth
+for folder and file names in the repository.
+
+**Transferable lesson:** Documentation and reality drift apart over time. In
+any production environment, always check the live system rather than relying
+on documentation that may be out of date.
+
+---
+
+### Problem 5 — git commit failed: Author identity unknown
+
+**What happened:** Every `git commit` command returned:
+```
+Author identity unknown
+fatal: unable to auto-detect email address
+```
+Subsequent `git push` commands returned "Everything up-to-date" — because
+the commits were never actually saved, so there was nothing to push.
+
+**Root cause:** Git requires a name and email address to be configured before
+it can create commits. This is a one-time setup per machine that had not been done.
+
+**Fix:**
+```powershell
+git config --global user.email "ranak0501@gmail.com"
+git config --global user.name "SadainHasan"
+```
+Then reran the commit command — it worked immediately.
+
+**Transferable lesson:** "Everything up-to-date" does not mean success when
+the upstream action (commit) had never completed. Always trace back through
+the full chain of operations when a push or deploy appears to have done nothing.
+
+---
+
+## Lessons Learned
+
+Working with the Claude API for the first time, the most important realisation
+is that **the system prompt is the product**. The Python code is 50 lines and
+largely boilerplate. The system prompt is where all the design thinking goes —
+who is Claude speaking to, what tone, what format, what constraints, what
+domain knowledge to emphasise.
+
+The debugging work on Day 19 — five separate setup problems in sequence — was
+itself a valuable exercise. Each problem was simple in isolation, but working
+through them systematically, identifying root causes rather than guessing at
+fixes, is exactly the diagnostic approach that separates a consultant from a
+user. Clients pay for someone who can identify what went wrong and why, not
+just someone who can follow instructions when everything goes right.
 
 ---
 
@@ -309,21 +446,13 @@ the client's domain well enough to write the right system prompt.
 
 ---
 
-## Lessons Learned
+*Day 19 of 730 — Week 3, Day 5 — Cloud + AI Automation Specialist*  
+*github.com/SadainHasan/cloud-ai-portfolio | cloudflowautomations.co.uk*
 
-Working with the Claude API for the first time, the most important realisation 
-is that **the system prompt is the product**. The Python code is 50 lines and 
-largely boilerplate. The system prompt is where all the design thinking goes — 
-who is Claude speaking to, what tone, what format, what constraints, what 
-domain knowledge to emphasise.
 
-This mirrors something I observed in banking IT: the configuration of a system 
-is often more valuable than the system itself. A generic trade settlement engine 
-configured for a specific regulatory regime is worth far more than the same 
-engine with no configuration. Claude without a system prompt is a general engine. 
-Claude with a well-designed system prompt is a specialist tool.
 
----
+
+
 
 *Day 19 of 730 — Week 3, Day 5 — Cloud + AI Automation Specialist*
 *github.com/SadainHasan/cloud-ai-portfolio | cloudflowautomations.co.uk*
