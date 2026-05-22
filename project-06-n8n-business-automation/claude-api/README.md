@@ -300,12 +300,12 @@ the client's domain well enough to write the right system prompt.
 | File | Description |
 |------|-------------|
 | ![API key created](day19-api-key-created.png) | Anthropic console showing the new API key in Active status |
-| ![Environment variable set](screenshots/day19-env-variable-set.png) | Windows command prompt showing ANTHROPIC_API_KEY confirmed |
-| ![Library installed](screenshots/day19-anthropic-installed.png) | pip show anthropic confirming successful installation |
-| ![Basic call output](screenshots/day19-basic-call-output.png) | Terminal output of basic_claude_call.py answering S3 lifecycle question |
-| ![Study assistant running](screenshots/day19-study-assistant-running.png) | Study assistant banner and first question/answer in terminal |
-| ![Session in progress](screenshots/day19-study-assistant-session.png) | Multiple questions answered in a single session |
-| ![GitHub push](screenshots/day19-github-push.png) | Git commit and push confirmation |
+| ![Environment variable set](day19-env-variable-set.png) | Windows command prompt showing ANTHROPIC_API_KEY confirmed |
+| ![Library installed](day19-anthropic-installed.png) | pip show anthropic confirming successful installation |
+| ![Basic call output](day19-basic-call-output.png) | Terminal output of basic_claude_call.py answering S3 lifecycle question |
+| ![Study assistant running](day19-study-assistant-running.png) | Study assistant banner and first question/answer in terminal |
+| ![Session in progress](day19-study-assistant-session.png) | Multiple questions answered in a single session |
+| ![GitHub push](day19-github-push.png) | Git commit and push confirmation |
 
 ---
 
