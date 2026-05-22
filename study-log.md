@@ -603,6 +603,45 @@ and workflow building
 **Anki cards added:** 2 (Cards 74–75)
 **Running deck total:** 75 cards
 
+---
+
+## Day 19 — Tuesday 19 May 2026
+
+**Topic:** Claude API — Building AI-Powered Tools
+**Category:** PURPLE — AI / Claude
+**Time spent:** ~90 minutes (plus extra debugging time)
+**Week:** 3, Day 5
+
+### What I built
+- basic_claude_call.py — minimal Claude API call, one question in, one answer out
+- claude_study_assistant.py — interactive command-line tutor with "AWS Maya" persona,
+  error handling, and session log saving
+- Added both scripts to project-06-n8n-business-automation/claude-api/ on GitHub
+
+### Key things I learned
+- anthropic Python SDK — pip install anthropic
+- client.messages.create() — the core API call pattern
+- system= parameter is the system prompt — defines persona, tone, and output format
+- max_tokens controls response length and cost
+- claude-haiku-4-5-20251001 is the cheapest model — ~£0.01 per study session
+- The system prompt IS the product. The Python code is just plumbing.
+- PowerShell uses $env:VAR syntax — NOT cmd.exe %VAR% syntax
+- git config --global must be set before first commit on any new machine
+- Red text in PowerShell does not always mean failure — git writes to stderr
+
+### Problems faced and resolved
+1. PowerShell vs cmd.exe syntax for environment variables — fixed with $env: prefix
+2. GitHub repo not cloned to this machine — fixed with git clone
+3. git clone showed red NativeCommandError — not an error; clone succeeded
+4. Wrong folder name in plan (n8n-automation) vs GitHub (n8n-business-automation) — used GitHub name
+5. git commit failed: Author identity unknown — fixed with git config --global
+
+### Energy / Confidence
+- Energy: 5/5 — Excellent
+- Confidence: 4/5 — Could explain this to someone else
+
+**Anki cards added:** 5 (Cards 76–80)
+**Running deck total:** 80 cards
 
 ---
 
@@ -624,19 +663,23 @@ and workflow building
 |---|---|---|
 | Week 1 | 1 | 29 |
 | Week 2 | 30 | 62 |
-| Week 3 | 63 | 73 |
+| Week 3 (Days 15–18) | 13 | 75 |
+| Week 3 (Day 19) | 5 | 80 |
 ---
 
 ## GitHub Projects
 
 | Project | Status | Week started | Notes |
 |---|---|---|---|
-| project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront deployed |
+| project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront — live at d2ven7lubrbrhs.cloudfront.net |
 | project-02-ec2-auto-scaling | 🔄 In progress | Week 1 | AMI created, diagram added |
-| project-03-vpc-network | 🔄 In progress | Week 2 | VPC + 4 subnets + IGW built |
-| project-05-s3-filr-manager | ✅ Built | Week 3 | Amazon S3, Lifecycle Rules, Versioning, SSE-S3 Encryption |
-| project-06-n8n-automation | ✅ Built | Week 2 | 2 workflows live and tested |
-| project-07-cloudflow-website  | ✅ Live | Week 2 | AWS Cloud — S3 + CloudFront + Route 53 + ACM |
+| project-03-vpc-network | ✅ Built | Week 2 | VPC + 4 subnets + IGW + NAT Gateway + SG + NACL complete |
+| project-05-s3-file-manager | ✅ Built | Week 3 | S3 lifecycle rules, versioning, SSE-S3 encryption, boto3 audit script |
+| project-06-n8n-business-automation | ✅ Built | Week 2 | 3 workflows live — weather briefing, study tracker, email summariser + OpenAI |
+| project-06-n8n-business-automation/claude-api | ✅ Built | Week 3 | Claude API study assistant — AWS Maya persona, system prompt, error handling |
+| project-07-cloudflow-website | ✅ Live | Week 2 | S3 + CloudFront + Route 53 + ACM — live at cloudflowautomations.co.uk |
+| project-08-aws-cost-audit | ✅ Built | Week 3 | boto3 cost audit script — flags idle EC2, stopped instances, orphaned resources |
+
 ---
 
 *Updated daily — part of a 104-week Cloud + AI Automation plan*  
