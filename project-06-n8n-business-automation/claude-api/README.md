@@ -299,7 +299,7 @@ the client's domain well enough to write the right system prompt.
 
 | File | Description |
 |------|-------------|
-| ![API key created](screenshots/day19-api-key-created.png) | Anthropic console showing the new API key in Active status |
+| ![API key created](day19-api-key-created.png) | Anthropic console showing the new API key in Active status |
 | ![Environment variable set](screenshots/day19-env-variable-set.png) | Windows command prompt showing ANTHROPIC_API_KEY confirmed |
 | ![Library installed](screenshots/day19-anthropic-installed.png) | pip show anthropic confirming successful installation |
 | ![Basic call output](screenshots/day19-basic-call-output.png) | Terminal output of basic_claude_call.py answering S3 lifecycle question |
