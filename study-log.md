@@ -645,6 +645,32 @@ and workflow building
 
 ---
 
+## Day 20 — 20 May 2026 (Wednesday)
+
+Topic: AWS Lambda — Serverless Computing | Category: BLUE | Time: 90 min
+
+What I studied: DCT book pages 65–70 (Lambda features, event source mappings, 
+VPC integration, limits, pricing) + SAA course Lambda module.
+
+What I built: Created Lambda function hello-world (Python 3.12, eu-west-2).
+Tested with console test event — Succeeded. Added environment variable.
+Created S3 bucket hasan-lambda-trigger-demo-2026. Connected S3 trigger
+(All object create events). Uploaded test file — Lambda triggered,
+verified in CloudWatch Logs. Drew Project 4 architecture diagram.
+
+Key numbers: 15 min timeout | 10,240 MB max memory | 1,000 concurrency | 
+50 MB zipped / 250 MB unzipped | 1M requests/month free (permanent)
+
+Exam traps: Lambda in VPC needs NAT Gateway for internet (NOT public subnet).
+S3/SNS config = source side. SQS/DynamoDB/Kinesis config = Lambda side.
+
+Unsure about: Lambda Layers (not covered today).
+Reserved vs provisioned concurrency distinction.
+
+Next session (Day 21): BUILD — API Gateway + Lambda + SES contact form complete.
+
+---
+
 ## Certification Progress
 
 | Certification | Target | Status |
