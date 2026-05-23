@@ -674,6 +674,24 @@ Next session (Day 21): BUILD — API Gateway + Lambda + SES contact form complet
 
 ---
 
+## Day 21 — 21 May 2026 (Thursday)
+
+Topic: BUILD — Project 4 Serverless Contact Form | Category: GREEN | Time: 90 min
+Anki: Cards 87–88 added | Deck before: 86 cards | Running total: 88 cards
+
+What I built: Verified email in SES eu-west-1. Updated Lambda execution role with
+SES permissions. Rewrote Lambda with boto3 SES integration, input validation,
+CORS headers, error handling. Created API Gateway REST API (contact-form-api)
+with /contact POST resource using Lambda proxy integration. Deployed to prod.
+Tested with curl — 200 response received, email delivered within 3 seconds.
+
+Key learnings: Lambda proxy integration passes full HTTP event. CORS headers must
+be returned by Lambda (not just API GW config) when using proxy integration.
+SES must be eu-west-1 for full feature support. Execution role needs ses:SendEmail.
+
+Week 3 complete: S3 | Make.com | boto3 | Revision | Claude API | Lambda | Project 4
+---
+
 ## Certification Progress
 
 | Certification | Target | Status |
@@ -692,8 +710,8 @@ Next session (Day 21): BUILD — API Gateway + Lambda + SES contact form complet
 |---|---|---|
 | Week 1 | 1 | 29 |
 | Week 2 | 30 | 62 |
-| Week 3 (Days 15–18) | 13 | 75 |
-| Week 3 (Day 19) | 5 | 80 |
+| Week 3 |63 | 88 |
+
 ---
 
 ## GitHub Projects
@@ -703,12 +721,14 @@ Next session (Day 21): BUILD — API Gateway + Lambda + SES contact form complet
 | project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront — live at d2ven7lubrbrhs.cloudfront.net |
 | project-02-ec2-auto-scaling | 🔄 In progress | Week 1 | AMI created, diagram added |
 | project-03-vpc-network | ✅ Built | Week 2 | VPC + 4 subnets + IGW + NAT Gateway + SG + NACL complete |
+| project-04-serverless-contact-form | ✅ Built | Week 3 | API Gateway + Lambda + SES — contact form live, tested via curl |
 | project-05-s3-file-manager | ✅ Built | Week 3 | S3 lifecycle rules, versioning, SSE-S3 encryption, boto3 audit script |
 | project-06-n8n-business-automation | ✅ Built | Week 2 | 3 workflows live — weather briefing, study tracker, email summariser + OpenAI |
 | project-06-n8n-business-automation/claude-api | ✅ Built | Week 3 | Claude API study assistant — AWS Maya persona, system prompt, error handling |
 | project-07-cloudflow-website | ✅ Live | Week 2 | S3 + CloudFront + Route 53 + ACM — live at cloudflowautomations.co.uk |
 | project-08-aws-cost-audit | ✅ Built | Week 3 | boto3 cost audit script — flags idle EC2, stopped instances, orphaned resources |
 
+Repo: https://github.com/SadainHasan/cloud-ai-portfolio
 ---
 
 *Updated daily — part of a 104-week Cloud + AI Automation plan*  
