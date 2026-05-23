@@ -667,6 +667,9 @@ S3/SNS config = source side. SQS/DynamoDB/Kinesis config = Lambda side.
 Unsure about: Lambda Layers (not covered today).
 Reserved vs provisioned concurrency distinction.
 
+**Anki cards added:** 5 (Cards 81–86)
+**Running deck total:** 86 cards
+
 Next session (Day 21): BUILD — API Gateway + Lambda + SES contact form complete.
 
 ---
