@@ -55,10 +55,28 @@ No web servers. No maintenance. Estimated cost approximately £1 per month.
 ---
 
 ## Architecture
+
+Before
 [User] → [Route 53 DNS] → [CloudFront CDN] → [S3 Bucket]
 ↑
 [ACM SSL Certificate]
 (free HTTPS via AWS)
+
+After
+```text
+[User]
+   ↓
+[Route 53 DNS]
+   ↓
+[CloudFront CDN]
+   ↓ (private access via OAC)
+[S3 Bucket - Private]
+   ↑
+[Origin Access Control (OAC)]
+
+[ACM SSL Certificate]
+(free HTTPS via AWS)
+```
 
 ---
 
@@ -79,7 +97,7 @@ No web servers. No maintenance. Estimated cost approximately £1 per month.
 - [x] Create S3 bucket and enable static website hosting
 - [x] Upload index.html portfolio page
 - [x] Create CloudFront distribution pointing to S3
-- [ ] Configure Origin Access Control (OAC) to secure S3
+- [x] Configure Origin Access Control (OAC) to secure S3
 - [x] Verify HTTPS working via CloudFront URL
 - [ ] Connect custom domain via Route 53
 - [ ] Add AWS Certificate Manager SSL for custom domain
@@ -107,10 +125,31 @@ single location, no global caching, manual SSL renewal.
 This architecture:
 - **Cost:** approximately £1/month (S3 + CloudFront)
 - **Performance:** content served from nearest edge location globally
-- **Security:** S3 bucket not publicly accessible — only CloudFront can read it
+- **Security:** Private S3 bucket protected by Origin Access Control (OAC); only CloudFront can access content
 - **Reliability:** CloudFront has 99.99% SLA
 - **SSL:** free and auto-renewed via AWS Certificate Manager
 
+
+## Security Enhancement — Origin Access Control (OAC)
+
+Initially, the website was configured using Amazon S3 static website
+hosting with public access enabled.
+
+To improve security and align with AWS architectural best practices,
+the implementation was upgraded to use **Origin Access Control (OAC)**.
+
+This change ensures:
+
+- The S3 bucket is **not publicly accessible**
+- Only CloudFront can retrieve website files
+- Direct S3 access is blocked
+- Improved security posture aligned with AWS SAA-C03 best practices
+
+The CloudFront distribution securely accesses S3 using a bucket policy
+that explicitly allows access only from the CloudFront distribution.
+
+This approach follows AWS recommended architecture for production-ready
+static websites.
 ---
 
 ## Screenshots
@@ -120,6 +159,12 @@ This architecture:
 
 ### CloudFront Distribution
 ![CloudFront](cloudfront-distribution.png)
+
+### S3 Block Public Access Enabled
+![S3 Public Access Block](day01-s3-block-public.png)
+
+### CloudFront Origin Access Control (OAC)
+![CloudFront OAC](day01-oac-cloudfront.png)
 
 ### Live Portfolio Site
 ![Live Site](portfolio-live.png)
