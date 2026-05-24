@@ -167,7 +167,7 @@ static websites.
 ![CloudFront OAC](day01-oac-cloudfront.png)
 
 ### Live Portfolio Site
-![Live Site](portfolio-live.png)
+
 
 ---
 
