@@ -690,6 +690,41 @@ be returned by Lambda (not just API GW config) when using proxy integration.
 SES must be eu-west-1 for full feature support. Execution role needs ses:SendEmail.
 
 Week 3 complete: S3 | Make.com | boto3 | Revision | Claude API | Lambda | Project 4
+
+---
+
+## Day 22 — Friday 22 May 2026
+**Topic:** AWS RDS — Relational Database Service
+**Category:** BLUE — AWS Cloud Study Day
+**Week:** Week 4, Day 1
+
+### What I Studied
+- DCT PDF pages 171-181: RDS features, use cases, anti-patterns, encryption, Multi-AZ, Read Replicas, snapshots
+- Watched DCT course: RDS section on Udemy
+- Launched RDS MySQL instance in AWS Console (eu-west-2)
+- Wrote Python connection script using mysql-connector-python
+- Created customers table, inserted sample data, ran SELECT query
+
+### Key Facts Locked In
+- RDS = OLTP (transactions). Redshift = OLAP (analytics). Never confuse these in exam.
+- Multi-AZ = synchronous replication, automatic failover, standby cannot serve reads
+- Read Replicas = asynchronous replication, serve reads, manual promotion
+- Cannot encrypt existing unencrypted DB — must snapshot → copy → encrypt → restore
+- Restored snapshot always creates NEW RDS instance with NEW DNS endpoint
+- Cannot decrease RDS storage — only increase
+
+### What I Found Difficult
+- 
+
+### Anki Cards Added Today
+- Deck before session: 88 cards
+- Cards added: 5 (Cards 89–93)
+- New running total: 93 cards
+
+### AWS Resources — CLEANUP STATUS
+- hasan-rds-day22-demo: ✅ DELETED
+- rds-day22-sg: ✅ DELETED
+
 ---
 
 ## Certification Progress
