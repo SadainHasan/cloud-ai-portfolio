@@ -713,8 +713,6 @@ Week 3 complete: S3 | Make.com | boto3 | Revision | Claude API | Lambda | Projec
 - Restored snapshot always creates NEW RDS instance with NEW DNS endpoint
 - Cannot decrease RDS storage — only increase
 
-### What I Found Difficult
-- 
 
 ### Anki Cards Added Today
 - Deck before session: 88 cards
@@ -726,6 +724,39 @@ Week 3 complete: S3 | Make.com | boto3 | Revision | Claude API | Lambda | Projec
 - rds-day22-sg: ✅ DELETED
 
 ---
+## Day 23 — Saturday 23 May 2026
+
+**Topic:** n8n Advanced Nodes — JavaScript Function Nodes, Error Handlers, Sub-Workflows
+**Category:** PURPLE — AI/Automation
+**Week:** Week 4, Day 2
+**Anki deck entering:** 93 cards | **Cards added today:** 3 (Cards 94, 95, 96) | **New total:** 96 cards
+
+### What I Learned
+- JavaScript Function nodes in n8n let you transform, filter, and enrich data mid-workflow using any standard JS
+- Error Trigger nodes catch workflow failures and let you handle them gracefully (alert, log, retry)
+- Sub-Workflows = modular automation — build once, call from any workflow
+- AI Founders Section 2: The 5-Step Employee Onboarding System — setup pays back every session forever
+
+### What I Built
+- Day 23 - JavaScript Function Node Practice: enriched 4 client records with daysSinceContact and priority
+- Day 23 - Error Handling Demo: intentional failure → Error Trigger caught and formatted the error
+- Day 23 - Sub-Workflow Parent → Sub-Workflow Child: parent calls child, receives formatted summary
+- Project 08 - n8n Research Bot v1: 5-node scaffold (Webhook → Code → HTTP → OpenAI → Gmail)
+
+### Screenshots Taken
+- day23-function-node-output.png
+- day23-error-handler-fired.png
+- day23-sub-workflow-call.png
+- day23-research-bot-scaffold.png
+
+
+### Next Session (Day 24 — Sunday 24 May)
+Topic: BLUE — RDS continued + Python database script
+Action needed: Wire up Tavily API in Research Bot (HTTP Request node)
+
+
+---
+
 
 ## Certification Progress
 
