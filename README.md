@@ -25,10 +25,10 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 
 | Item | Detail |
 |---|---|
-| 📅 Current day | Day 23 of 730 |
-| 📆 Current week | Week 4 — RDS Databases + n8n Advanced + 5-Hour Revision Session |
-| 🗓️ Last updated | Thursday 23 July 2026 |
-| 🃏 Anki deck | 88 cards |
+| 📅 Current day | Day 24 of 730 |
+| 📆 Current week | Week 4 — RDS + Python Database Script |
+| 🗓️ Last updated | Sunday 26 July 2026 |
+| 🃏 Anki deck | 96 cards |
 | 🏗️ Projects built | 12 |
 | 🎯 Next milestone | AWS SAA-C03 — December 2026 |
 
@@ -73,7 +73,7 @@ foundational AWS infrastructure to enterprise-grade AI automation systems.
 |---|---|---|---|---|
 | Day 22 | Wed 22 Jul | RDS — managed databases, Multi-AZ, Read Replicas, Aurora | 🔵 AWS | ✅ Complete |
 | Day 23 | Thu 23 Jul | n8n Advanced Nodes + 5-Hour Full Revision (Days 1–23) | 🟣 AI/Claude | ✅ Complete |
-| Day 24 | Fri 24 Jul | — | — | ⬜ Upcoming |
+| Day 24 | Fri 24 Jul | RDS Continued: Multi-AZ + Python Database Script | 🔵 AWS | ✅ Complete |
 | Day 25 | Sat 25 Jul | — | — | ⬜ Upcoming |
 | Day 26 | Sun 26 Jul | — | — | ⬜ Upcoming |
 | Day 27 | Mon 27 Jul | — | — | ⬜ Upcoming |
@@ -113,7 +113,7 @@ Study notes and reference guides built during the 24-month roadmap.
 | Week 3 (Days 15–18) | 13 | 75 | S3 storage classes, boto3, Well-Architected Framework |
 | Week 3 (Day 19) | 5 | 80 | Claude API, system prompts, API errors, API key security, max_tokens |
 | Week 4 (Days 20–23) | 8 | 88 | RDS, Multi-AZ, Read Replicas, Aurora, n8n advanced nodes, AI Founders |
-
+| Week 4 (Day 24) | 8 | 96 | Multi-AZ vs Read Replicas, encryption, D.A.M.E hierarchy, LITUK basics |
 ---
 
 ## Technical Stack
