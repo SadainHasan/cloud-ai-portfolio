@@ -756,7 +756,31 @@ Action needed: Wire up Tavily API in Research Bot (HTTP Request node)
 
 
 ---
+## Day 24 — Friday 24 July 2026
+**Topic:** RDS Continued: Multi-AZ vs Read Replicas + Python Database Script
+**Category:** 🔵 BLUE — AWS Cloud | Week 4, Day 3
 
+**Studied:**
+- DCT PDF pages 171–181 — RDS section: encryption, scalability, Multi-AZ vs Read Replicas, HA hierarchy
+- AWS-SAA-Adaptive-Quiz: RDS topic — 10 questions
+
+**Built:**
+- connect_db.py — SQLite customer query script (project-09-sql-to-ai-dashboard)
+- Functions: create_connection, create_table, insert_demo_data, find_high_value_customers, find_inactive_customers
+
+**Key facts locked in:**
+- Multi-AZ = synchronous, standby NOT readable, AUTOMATIC failover (HA/DR)
+- Read Replicas = asynchronous, ALL readable, MANUAL promotion (read scaling)
+- SCR for encrypting existing DB: Snapshot → Copy → Restore
+- D.A.M.E hierarchy: DynamoDB → Aurora → Multi-AZ → EC2
+
+**Anki:** 88 entering | +6 AWS (Cards 89–94) + 2 LITUK | SAA deck: 94 | LITUK deck: 2 | Total: 96
+
+**Projects:** 12 total | project-09 in progress
+
+**Life in the UK:** Chapter 4 — A Modern, Thriving Society (10 mins)
+
+---
 
 ## Certification Progress
 
