@@ -603,6 +603,45 @@ and workflow building
 **Anki cards added:** 2 (Cards 74–75)
 **Running deck total:** 75 cards
 
+---
+
+## Day 19 — Tuesday 19 May 2026
+
+**Topic:** Claude API — Building AI-Powered Tools
+**Category:** PURPLE — AI / Claude
+**Time spent:** ~90 minutes (plus extra debugging time)
+**Week:** 3, Day 5
+
+### What I built
+- basic_claude_call.py — minimal Claude API call, one question in, one answer out
+- claude_study_assistant.py — interactive command-line tutor with "AWS Maya" persona,
+  error handling, and session log saving
+- Added both scripts to project-06-n8n-business-automation/claude-api/ on GitHub
+
+### Key things I learned
+- anthropic Python SDK — pip install anthropic
+- client.messages.create() — the core API call pattern
+- system= parameter is the system prompt — defines persona, tone, and output format
+- max_tokens controls response length and cost
+- claude-haiku-4-5-20251001 is the cheapest model — ~£0.01 per study session
+- The system prompt IS the product. The Python code is just plumbing.
+- PowerShell uses $env:VAR syntax — NOT cmd.exe %VAR% syntax
+- git config --global must be set before first commit on any new machine
+- Red text in PowerShell does not always mean failure — git writes to stderr
+
+### Problems faced and resolved
+1. PowerShell vs cmd.exe syntax for environment variables — fixed with $env: prefix
+2. GitHub repo not cloned to this machine — fixed with git clone
+3. git clone showed red NativeCommandError — not an error; clone succeeded
+4. Wrong folder name in plan (n8n-automation) vs GitHub (n8n-business-automation) — used GitHub name
+5. git commit failed: Author identity unknown — fixed with git config --global
+
+### Energy / Confidence
+- Energy: 5/5 — Excellent
+- Confidence: 4/5 — Could explain this to someone else
+
+**Anki cards added:** 5 (Cards 76–80)
+**Running deck total:** 80 cards
 
 ---
 
@@ -624,20 +663,183 @@ and workflow building
 |---|---|---|
 | Week 1 | 1 | 29 |
 | Week 2 | 30 | 62 |
-| Week 3 | 63 | 73 |
+| Week 3 (Days 15–18) | 13 | 75 |
+| Week 3 (Day 19) | 5 | 80 |
 ---
 
 ## GitHub Projects
 
 | Project | Status | Week started | Notes |
 |---|---|---|---|
-| project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront deployed |
+| project-01-portfolio-site | ✅ Live | Week 1 | S3 + CloudFront — live at d2ven7lubrbrhs.cloudfront.net |
 | project-02-ec2-auto-scaling | 🔄 In progress | Week 1 | AMI created, diagram added |
-| project-03-vpc-network | 🔄 In progress | Week 2 | VPC + 4 subnets + IGW built |
-| project-05-s3-filr-manager | ✅ Built | Week 3 | Amazon S3, Lifecycle Rules, Versioning, SSE-S3 Encryption |
-| project-06-n8n-automation | ✅ Built | Week 2 | 2 workflows live and tested |
-| project-07-cloudflow-website  | ✅ Live | Week 2 | AWS Cloud — S3 + CloudFront + Route 53 + ACM |
+| project-03-vpc-network | ✅ Built | Week 2 | VPC + 4 subnets + IGW + NAT Gateway + SG + NACL complete |
+| project-05-s3-file-manager | ✅ Built | Week 3 | S3 lifecycle rules, versioning, SSE-S3 encryption, boto3 audit script |
+| project-06-n8n-business-automation | ✅ Built | Week 2 | 3 workflows live — weather briefing, study tracker, email summariser + OpenAI |
+| project-06-n8n-business-automation/claude-api | ✅ Built | Week 3 | Claude API study assistant — AWS Maya persona, system prompt, error handling |
+| project-07-cloudflow-website | ✅ Live | Week 2 | S3 + CloudFront + Route 53 + ACM — live at cloudflowautomations.co.uk |
+| project-08-aws-cost-audit | ✅ Built | Week 3 | boto3 cost audit script — flags idle EC2, stopped instances, orphaned resources |
+
 ---
 
 *Updated daily — part of a 104-week Cloud + AI Automation plan*  
 *MSc Cloud Computing, University of Leicester*
+
+---
+
+## Day 25 — Saturday 25 July 2026
+**Topic:** Community Volunteer Project Prep
+**Category:** AMBER — Community Volunteer
+**Time spent:** ~90 minutes
+**Week:** 4, Day 4 of the week
+
+### What I built
+- volunteer-outreach-tracker.csv — 5 Leicester organisations identified with contact details
+- volunteer-service-offer.md — pro-bono cloud and automation offer description
+- volunteer-outreach-template.md — personalised email template for each organisation
+- volunteer-project-scope-draft.md — 5-bullet scope for top candidate organisation
+- project-10-community-volunteer/ folder created on GitHub with stub README
+
+### Key things I learned
+- AI Founders Section 2: the 5-Step Employee Onboarding System (Personal Preferences, Virtual Workspace, Business Tools, Reusable Playbooks, Performance Stack)
+- A client who goes from zero to full Cowork onboarding with 3 connected tools is a £1,000–£2,500 billable service
+- Life in the UK Chapter 5: House of Commons (650 elected MPs, more powerful) vs House of Lords (appointed, can delay but not block legislation)
+- The PM is not directly elected — the public votes for MPs and the Commons majority leader becomes PM automatically
+- A well-scoped volunteer project is identical portfolio evidence to a paid project
+
+### What confused me / still unsure about
+- Need to confirm which organisations actually respond to outreach
+- Not yet sure which specific automation problem to target — depends on confirmed partner
+
+### Problems faced and resolved (if any)
+- None — research and planning day, no technical blockers
+
+### Energy / Confidence
+- Energy: /5
+- Confidence: /5
+
+**AWS SAA cards added:** 0 (AMBER day)
+**LITUK cards added:** 2 (LITUK Cards 3–4)
+**AWS SAA deck total:** 94 cards
+**Life in the UK deck total:** 4 cards
+
+---
+
+## Day 26 — Sunday 26 July 2026
+**Topic:** Full Week 4 Revision — Anki + Practice Questions + Weekly Summary
+**Category:** TEAL — Revision Day
+**Time spent:** ~90 minutes
+**Week:** 4, Day 5 of the week
+
+### What I built
+- week-04-summary.md — weekly reflection (topics, projects, gaps, Week 5 focus)
+- atlas.md — started personal AI company source-of-truth file (AI Founders skill)
+
+### Key things I learned
+- AI Founders Section 3: The 20-Skill AI Agency Stack — 5 layers: Bedrock, Force Multipliers, Brain Trust, Production Floor, Ground Crew
+- Build Genesis first — then use it to build all other skills
+- DAX = DynamoDB Accelerator — microsecond read latency, eventual consistency only, caches reads NOT writes
+- RDS = OLTP (row storage, transactions). Redshift = OLAP (columnar, analytics, petabyte-scale)
+- Redshift Spectrum = run SQL directly on S3 without loading into Redshift
+- Hot partition problem in DynamoDB = poor partition key choice (low cardinality)
+
+### What confused me / still unsure about
+- [Fill in after completing practice questions]
+
+### Problems faced and resolved (if any)
+- None — revision day
+
+### Energy / Confidence
+- Energy: /5
+- Confidence: /5
+
+**Practice question score:** __ / 15 (fill in)
+**AWS SAA cards added:** 2 (Cards 95–96: DAX, RDS vs Redshift)
+**LITUK cards added:** 0 (Sunday = mock test, not chapter study)
+**AWS SAA deck total:** 96 cards
+**Life in the UK deck total:** 4 cards
+**🎯 Combined total: 100 cards — milestone reached**
+
+---
+
+## Day 27 — Monday 27 July 2026
+**Topic:** DynamoDB + ElastiCache
+**Category:** 🔵 BLUE — AWS Cloud
+**Time spent:** ~90 minutes
+**Week:** Week 4, Day 6 of 7
+
+### What I built
+- DynamoDB table: `hasan-session-store-2026` (partition key: sessionId, sort key: createdAt)
+- Created 2 items and ran a Query by partition key — confirmed single-digit millisecond response
+- Screenshots: day27-dynamodb-table.png, day27-dynamodb-query.png
+- Claude Routine brief: Overdue Invoice Nudger (5-part template) — saved in Notion as routine-invoice-nudger.md
+
+### Key things I learned
+- DynamoDB is NoSQL, serverless, schema-less — data replicated across 3 AZs automatically; max item size 400KB
+- DAX = DynamoDB Accelerator — improves READ performance only (milliseconds → microseconds), write-through caching, no app code changes needed
+- DynamoDB Global Tables = multi-region, multi-master, 99.999% SLA; strongly consistent reads NOT supported cross-region
+- DynamoDB TTL: auto-deletes items after expiry date, no cost, no RCU/WCU consumed, deletion within 48 hours
+- ElastiCache exam trigger: read-heavy application + database overloaded with repeated queries → ElastiCache
+- Choose Redis: encryption, HIPAA, HA/Multi-AZ, complex data types (sorted sets/lists), persistence, pub/sub
+- Choose Memcached: simplicity, multi-threading, elastically scalable object caching, no persistence/encryption needed
+- ElastiCache is fully managed — cannot run it on EC2; does not support Spot Instances
+- Claude Routines = event-triggered automations (doorbell model) running on Anthropic's cloud — laptop can be closed
+- AI Founders Section 4: 13 routines = ready-to-sell products for UK SMEs; 3-routine bundle worth £500–£1,200 setup
+
+### What confused me / still unsure about
+- GSI vs LSI distinction — need to revise with a concrete example (add to Anki queue)
+- When to use ElastiCache IN FRONT of DynamoDB vs DAX: ElastiCache for infrequently-changed data; DAX for any DynamoDB read performance
+
+### Problems faced and resolved (if any)
+- N/A — theory + hands-on console day, no issues
+
+### Energy / Confidence
+- Energy: /5
+- Confidence: /5
+
+**AWS SAA cards added:** 5 (Cards 97–101)
+**LITUK cards added:** 1 (LITUK Card 5)
+**AWS SAA deck total:** 101 cards
+**Life in the UK deck total:** 5 cards
+
+---
+
+## 08 September 2026
+**Topic:** n8n Introduction, Setup & Core Fundamentals
+**Category:** 🟣 PURPLE — AI Automation
+**Course:** n8n Masterclass (Udemy)
+**Sections completed:** Section 1 (all 6 lessons ✅) + Section 2 lessons 2.7–2.8 ✅
+
+### What I built
+- n8n Cloud account set up (14-day free trial)
+- **Email Sender workflow**: Manual Trigger + Schedule Trigger (9am daily) + Gmail node with OAuth2 credentials
+- Dynamic date expression: `{{ $now.format('dd-LLL-yyyy') }}` — email automatically shows today's date
+- Explored the 80/20 workflow canvas showing all 13 core node categories
+
+### Key things I learned
+- n8n is a visual drag-and-drop automation tool — connects apps, APIs, and AI without complex code
+- Every workflow must start with a trigger (Manual, Schedule, Webhook, or App Event)
+- Nodes flow left to right; top branch always executes before bottom branch
+- Sequential execution: nodes run one after another, not in parallel
+- Nodes run once per input — 5 items entering a node = node runs 5 times
+- The 13 core nodes cover 80% of automation use cases across 5 categories: Triggers, Data Processing, Connectivity, Storage, AI
+- OAuth2 = "Sign in with Google" style auth — n8n stores token, not your password
+- Active toggle must be ON for schedule/webhook triggers to fire automatically
+- IF node = branching logic (true/false paths); Use AI nodes only when judgement is needed, not for deterministic if/else logic
+
+### What confused me / still unsure about
+- Webhook vs App Event trigger — when to use each in a real client workflow
+- HTTP Request authentication types (Bearer token vs API key vs OAuth2)
+
+### Problems faced and resolved
+- N/A — smooth setup day, n8n Cloud connected cleanly
+
+### Energy / Confidence
+- Energy: /5
+- Confidence: /5
+
+**n8n Automation cards added:** 20 (Cards 1–20 — new deck)
+**AWS SAA deck total:** 101 cards (unchanged)
+**Life in the UK deck total:** 5 cards (unchanged)
+**n8n Automation deck total:** 20 cards (NEW deck started)
+**🎯 Combined total: 126 cards**

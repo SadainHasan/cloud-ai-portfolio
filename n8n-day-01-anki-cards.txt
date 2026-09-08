@@ -1,0 +1,23 @@
+#separator:tab
+#html:false
+#deck:n8n Automation
+What is n8n?	A visual drag-and-drop workflow automation tool that connects apps, APIs, and AI together — without complex code. Used to build automations for SME clients.
+What is an n8n workflow?	A set of automated instructions that connects multiple apps. Example: every day at 9am → send an email with today's date.
+What is an n8n trigger?	The starting node of every workflow. It listens for an event and fires the workflow when that event occurs. Every workflow must start with a trigger.
+What are the 3 core trigger types in n8n?	1. Manual Trigger (click to execute — for testing), 2. Schedule Trigger (time-based — daily/weekly), 3. Webhook (fires when another system sends data)
+What is an n8n node?	A single step in a workflow. Each node does one thing: connects to an app, transforms data, or makes a decision. Nodes flow left to right on the canvas.
+What is OAuth2 in the context of n8n credentials?	A secure authentication method — the "Sign in with Google" style login. n8n stores the token, not your password. Used to connect Gmail, Google Sheets etc.
+What does the n8n Schedule Trigger do?	Fires a workflow automatically at a set time or interval. Example: every day at 9:00am, every Monday, every 30 minutes.
+What is an n8n expression and how do you write one?	A dynamic value inside double curly braces: {{ }}. Example: {{ $now.format('dd-LLL-yyyy') }} outputs today's date like "08-Sep-2026".
+What does $now represent in n8n?	The current date and time. Used in expressions to create dynamic values. Example: {{ $now.format('DD/MM/YYYY') }} → "08/09/2026"
+What are the 13 core n8n nodes (the 80/20)?	5 categories: Triggers (Manual, Schedule, Webhook), Data (Split Out, Aggregate, Set, IF, Code), Connectivity (HTTP Request, Webhook Response), Storage (Google Sheets, Database), AI (LLM Chain, AI Agent)
+What does the n8n Set node (Edit Fields) do?	Creates and modifies data fields in the workflow. The most versatile and commonly used node in n8n.
+What does the n8n IF node do?	Splits the workflow into two paths based on a condition: TRUE path (condition met) and FALSE path (condition not met). Enables branching logic.
+What does the n8n Split Out node do?	Flattens an array into individual items. Example: 1 array containing 5 leads → 5 separate items that can each be processed individually.
+What does the n8n Aggregate node do?	Merges individual items back into a single array. The opposite of Split Out.
+What does the n8n HTTP Request node do?	Calls any external API using GET, POST, PUT, DELETE etc with authentication. Works with any service that has an API — even without a built-in n8n integration.
+What is sequential execution in n8n?	By default n8n runs nodes one after another (synchronously), not in parallel. Node B doesn't start until Node A completes.
+What is the "nodes run once per input" rule in n8n?	If 5 items enter a node, that node runs 5 separate times — once for each item. 5 inputs = 5 executions of that node.
+What is the difference between Active and Inactive workflows in n8n?	Inactive = only runs when you manually click Execute (testing mode). Active = runs automatically on its trigger (production mode). Must activate to run on a schedule or webhook.
+When should you use an AI Agent node vs a Basic LLM Chain in n8n?	LLM Chain = when AI makes a single judgement call (sentiment, classify, summarise). AI Agent = when AI needs tools, memory, or multi-step decision-making.
+What is n8n Cloud pricing and what does it include?	~£24/month: 2,500 workflow executions, 5 active workflows, automatic updates, backups, no server maintenance. Free 14-day trial available.
