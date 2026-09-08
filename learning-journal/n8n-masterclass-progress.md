@@ -8,14 +8,14 @@
 | # | Section | Lectures | Duration | Status | Completed |
 |---|---------|----------|----------|--------|-----------|
 | 1 | Introduction & Setup | 6 | 19 min | ✅ Done | 07 Sep 2026 |
-| 2 | N8N Fundamentals — Triggers, APIs & Smart Data Workflows | 7 | 41 min | 🔄 In Progress (3/7 done — 2.7 & 2.8 completed 08 Sep) | — |
+| 2 | N8N Fundamentals — Triggers, APIs & Smart Data Workflows | 7 | 41 min | ✅ Done | 08 Sep 2026 |
 | 3 | Workflow Planning & AI Fundamentals | 5 | 30 min | ⬜ Not started | — |
 | 4 | AI Automation for Social Media — LinkedIn Content System | 11 | 59 min | ⬜ Not started | — |
 | 5 | Learn Style & Refinement — Getting AI to Write Like You | 1 | 11 min | ⬜ Not started | — |
 | 6 | Full SEO Content Generation System | 30 | 3h 59 min | ⬜ Not started | — |
 | 7 | Front-Ends for Automations — Custom AI Dashboards | 22 | 2h 19 min | ⬜ Not started | — |
 
-**Overall: 9 / 76 lectures completed**
+**Overall: 13 / 76 lectures completed**
 
 ---
 
@@ -27,7 +27,7 @@
 - Configured email credentials
 - **Portfolio project:** —
 
-### Section 2 — N8N Fundamentals *(in progress)*
+### Section 2 — N8N Fundamentals ✅
 - Topics: Triggers, APIs, Smart Data Workflows
 - **Portfolio project:** —
 - **Key learnings:** —

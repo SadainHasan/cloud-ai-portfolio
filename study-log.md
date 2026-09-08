@@ -843,3 +843,43 @@ and workflow building
 **Life in the UK deck total:** 5 cards (unchanged)
 **n8n Automation deck total:** 20 cards (NEW deck started)
 **🎯 Combined total: 126 cards**
+
+---
+
+## Day 29 — 08 September 2026
+
+**Topic:** n8n Section 2 — The 13 Core Nodes & Execution Essentials
+**Category:** 🟣 PURPLE — AI Automation
+**Course:** n8n Masterclass (Udemy) | Sections 2.7–2.8
+
+### What I Covered
+- The 80/20 rule: 13 nodes cover 80% of all real-world automations
+- Execution essentials: left→right flow, top branch first, sequential (not parallel), nodes run once per input
+- Active vs Inactive workflows
+- The 5 node categories and all 13 nodes in detail
+- Split Out — flatten arrays into individual items
+- Aggregate — merge items back into one structure
+- Set/Edit Fields — create new fields using expressions
+- IF node — branch workflows based on conditions
+- Code node — custom JavaScript transformations
+- HTTP Request — connect to any external API
+- Webhook + Webhook Response — receive and reply to external triggers
+- Google Sheets + Database nodes — lightweight storage
+- Basic LLM Chain — AI judgement for fuzzy rules
+- AI Agent — multi-step autonomous AI with memory and tools
+- When to use IF vs LLM Chain vs AI Agent
+
+### What I Built
+- Studied and imported the 80/20 workflow JSON demonstrating all 13 nodes with live lead data
+
+### What Clicked
+- Sequential execution explains why top branch always runs first — it's not parallel
+- The distinction between IF (deterministic) and LLM Chain (fuzzy judgement) is key for real projects
+- HTTP Request is the universal connector — any app with an API can be connected
+
+### Anki Cards
+- **n8n Automation deck:** 20 new cards added (Cards 21–40)
+- **AWS SAA deck total:** 101 cards (unchanged)
+- **Life in the UK deck total:** 5 cards (unchanged)
+- **Combined total: 146 cards**
+

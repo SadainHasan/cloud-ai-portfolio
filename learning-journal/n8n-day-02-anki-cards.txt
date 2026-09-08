@@ -1,0 +1,24 @@
+#separator:tab
+#html:false
+#deck:n8n Automation
+
+What is the 80/20 rule in n8n?	Master just 13 core nodes and you can build 80% of all real-world automations. The instructor built 150+ client automations using only these 13 nodes.
+What direction do n8n workflows run?	Left to right. When two branches split from one node, the TOP branch always runs first, then the bottom branch.
+What is sequential execution in n8n?	Nodes run one after another — NOT in parallel. If Branch A takes 10 seconds, Branch B waits. This is synchronous execution by default.
+How many times does a node run if it receives 5 inputs?	5 times — once per input. If you Split Out an array of 5 leads, every node after it runs 5 times.
+What is the difference between Active and Inactive workflows?	Inactive = only runs when you click Execute manually (for testing). Active = runs automatically based on its trigger (Schedule, Webhook, App Event).
+What are the 3 Trigger nodes in the 13 core nodes?	Manual Trigger (testing), Schedule Trigger / Cron (time-based), Webhook (triggered by external data sent to a URL).
+What are the 5 Data Processing nodes in the 13 core nodes?	Split Out, Aggregate, Set / Edit Fields, IF, Code.
+What are the 2 Connectivity nodes in the 13 core nodes?	HTTP Request (connect to any external API) and Webhook Response (send a reply back after processing).
+What are the 2 Storage nodes in the 13 core nodes?	Google Sheets and Database nodes (Airtable, Notion, MySQL, etc.).
+What are the 2 AI nodes in the 13 core nodes?	Basic LLM Chain (AI judgement for fuzzy rules) and AI Agent (AI with memory, tools and multi-step planning).
+What does the Split Out node do?	Flattens an array into individual items. Example: an array of 5 leads becomes 5 separate rows, each processed individually.
+What does the Aggregate node do?	The opposite of Split Out — merges individual items back into a single combined array/structure.
+What does the Set / Edit Fields node do?	Creates, renames, or modifies data fields. Example: combine firstName + lastName into a new "full name" field using an expression.
+When should you use the IF node vs the Basic LLM Chain?	IF node = clear, deterministic rules ("if invoice > £1000, send to approval"). Basic LLM Chain = fuzzy judgement ("if email suggests the customer might cancel, flag for retention").
+What is the HTTP Request node used for?	Connect to ANY external API using GET, POST, etc. If an app has no native n8n node, use HTTP Request to connect via its API.
+What does the Webhook node do?	Receives data sent by an external system to a specific URL. Example: customer submits a form → data POSTs to your webhook URL → workflow triggers.
+What does the Webhook Response node do?	Sends a response back to whoever triggered the webhook. Example: after processing a form submission, send back "Thank you, we'll be in touch."
+When should you use the AI Agent node instead of Basic LLM Chain?	When you need the AI to take multiple steps autonomously — e.g. research a company, summarise it, and add it to your CRM. The Agent has memory, tools, and can plan.
+What expression gets the value of a field called "full name" (with a space) in n8n?	{{ $json["full name"] }} — use bracket notation when field names contain spaces or special characters.
+In the Code node, how do you loop through all inputs and modify each item?	for (const item of $input.all()) { item.json["newField"] = "value"; } return $input.all();
