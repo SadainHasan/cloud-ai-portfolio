@@ -53,6 +53,8 @@ Active study and course notes — updated after each session.
 | [n8n Masterclass Progress](./learning-journal/n8n/n8n-masterclass-progress.md) | Course tracker — 7 sections, ~9 hours |
 | [Day 01 — n8n Intro & Setup](./learning-journal/n8n/n8n-day-01-intro-and-setup.md) | Workflows, triggers, 13 core nodes, Email Sender build |
 | [Day 01 — Anki Cards](./learning-journal/n8n/n8n-day-01-anki-cards.txt) | 20 flashcards for Anki import |
+| [Day 02 — 13 Core Nodes & Execution](./learning-journal/n8n/n8n-day-02-13-nodes-and-execution.md) | Execution flow, 13 core nodes deep-dive, business use cases |
+| [Day 02 — Anki Cards](./learning-journal/n8n/n8n-day-02-anki-cards.txt) | 20 flashcards (cards 21–40) for Anki import |
 | [Study Log](./study-log.md) | Daily learning record |
 | [Prompting Notes](./prompting-notes.md) | AI prompt engineering techniques |
 
