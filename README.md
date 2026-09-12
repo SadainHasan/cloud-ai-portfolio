@@ -55,6 +55,8 @@ Active study and course notes — updated after each session.
 | [Day 01 — Anki Cards](./learning-journal/n8n/n8n-day-01-anki-cards.txt) | 20 flashcards for Anki import |
 | [Day 02 — 13 Core Nodes & Execution](./learning-journal/n8n/n8n-day-02-13-nodes-and-execution.md) | Execution flow, 13 core nodes deep-dive, business use cases |
 | [Day 02 — Anki Cards](./learning-journal/n8n/n8n-day-02-anki-cards.txt) | 20 flashcards (cards 21–40) for Anki import |
+| [Day 03 — Workflow Planning, AI Fundamentals & LinkedIn Content System](./learning-journal/n8n/n8n-day-03-workflow-planning-ai-fundamentals.md) | AI fundamentals, MCP, agents vs LLMs, workflow planning, CV workflow, LinkedIn content system, tone of voice |
+| [Day 03 — Anki Cards](./learning-journal/n8n/n8n-day-03-anki-cards.txt) | 25 flashcards (cards 41–65) for Anki import |
 | [Study Log](./study-log.md) | Daily learning record |
 | [Prompting Notes](./prompting-notes.md) | AI prompt engineering techniques |
 

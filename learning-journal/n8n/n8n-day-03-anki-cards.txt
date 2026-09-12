@@ -1,0 +1,53 @@
+#separator:tab
+#html:false
+#deck:n8n Automation
+
+What are "tokens" in the context of LLMs?	Tokens are the unit of cost for AI models. Roughly equivalent to words/word-parts. More tokens in your prompt = higher cost. Input tokens (your prompt) AND output tokens (the response) are both charged when using the API.
+
+What is zero-shot prompting?	Typing one message into an AI and receiving one response — no back-and-forth, no tools, no iteration. The simplest LLM interaction. What the Basic LLM Chain node replicates in n8n.
+
+What is an LLM (Large Language Model)?	An AI trained on massive datasets that works by predicting the next most likely word in a sequence. Examples: GPT-4, Claude 3.5 Sonnet, Gemini 1.5 Pro. Each model specialises in different areas.
+
+How does an LLM work fundamentally?	It predicts the next most likely word in a sequence, based on training on huge amounts of text data. The model has no real "understanding" — it's very advanced pattern matching.
+
+What is the difference between paying via subscription vs API for LLMs?	Subscription (e.g. ChatGPT Pro $20/month) gives you a usage allowance. API charges per individual token used. API = pay-as-you-go, important when integrating LLMs into n8n workflows.
+
+What is prompt engineering?	The practice of writing prompts that are specific, concise, and clear to get better results and use fewer tokens. Better prompts = lower costs + higher quality outputs.
+
+What is MCP (Model Context Protocol)?	A unified standard for AI to interact with external tools. Like USB-C for AI — standardises inputs and outputs across all tools so AI can talk to Gmail, Slack, Shopify, Notion, etc. through one interface.
+
+What are the three components of MCP?	1) MCP Client (the AI — Claude, ChatGPT) 2) MCP Server (the middleman that standardises communication) 3) MCP Tools (the external services — Gmail, Slack, Shopify, etc.)
+
+Why is MCP compared to USB-C?	Both are unified standards. Before MCP, each tool had different APIs and documentation. MCP standardises the interface so any AI can connect to any tool the same way — one plug fits all.
+
+What is the key difference between an LLM and an AI Agent?	LLM: input → output (zero-shot). AI Agent: has tools, iterates, makes decisions, completes tasks. AI Agents can access Gmail, Shopify, Notion etc. and think through multi-step tasks autonomously.
+
+In n8n, what does the Basic LLM Chain node do?	Connects a prompt to an AI model and returns formatted output. No tool access. Used when you want to transform or extract data using AI — like "extract name, email, city from this CV text."
+
+In n8n, what does the AI Agent node do?	Gives the AI access to tools (Gmail, Notion, Shopify) and a broader goal. The agent decides which tools to use and iterates through steps to complete complex tasks.
+
+What is the n8n workflow planning methodology?	1) Start with the end goal 2) Identify the trigger 3) Map inputs 4) Plan data transformations 5) Identify outputs. Use sticky notes on the canvas BEFORE touching any nodes.
+
+How do you add a sticky note in n8n?	Press Shift+S, or click the sticky note icon at the top. They appear where you last clicked on the canvas. Written in Markdown format (## for heading, **bold**, [link](url)).
+
+What is OCR and why is it used in the CV workflow?	OCR = Optical Character Recognition. Converts an image (e.g. photo of a CV) into text so the AI can process it. You can't feed a raw image to a text-based LLM Chain — you need text first.
+
+Which OCR service was used in the CV workflow, and what does it cost?	Mistral AI — approximately $1 per 1,000 pages. Used the Mistral AI node in n8n to extract text from image-format CVs.
+
+What does the Edit Fields (Set) node do in n8n?	Takes input data and maps/transforms it into standardised field names and values. Used to ensure consistent data format before writing to a CRM or database.
+
+In the CV workflow, what are the two trigger types?	1) n8n Form Trigger (someone uploads CV via a form) 2) Google Drive Trigger (file is added to a specific Drive folder). Both can exist in one workflow.
+
+What are the two workflows in the LinkedIn Content System?	Workflow 1 (8am): Content Generator — pulls topics, writes posts, generates images, saves to Google Sheets as "Draft". Workflow 2 (9am): Publisher — checks for approved + scheduled posts, posts to LinkedIn, updates status to "Posted".
+
+What columns should a LinkedIn content calendar Google Sheet have?	id, topic, date_created, date_scheduled, content (generated), edited_post, approved (checkbox), status (Not Started / Draft / Approved / Posted).
+
+What is the purpose of the "Brand" tab in the Google Sheets content system?	Stores your writing style guidelines, tone of voice rules, and examples. Pulled into every AI prompt so posts sound like you, not generic AI.
+
+What does the Structured Output Parser do in n8n?	Forces the LLM Chain to always return output in a specified JSON format (e.g. `{"content": "the linkedin post"}`). Guarantees predictable field naming so downstream nodes can reliably access the data.
+
+What is OpenRouter and why use it for n8n?	A unified API gateway for multiple LLMs (GPT-4, Claude, Gemini, etc.). One API key works for all models. Easy to switch models, compare prices, and set a fallback model if your primary fails.
+
+Why use a Filter node BEFORE the Loop node in the LinkedIn system?	To only process rows where: (1) topic is not blank and (2) status = "Not Started". Prevents wasting API credits on empty rows and prevents overwriting posts that are already drafted.
+
+What is the Loop Over Items node used for in the LinkedIn workflow?	Processes one item at a time through the workflow loop. Prevents rate limit errors on free LLM models and ensures each topic gets fully processed before the next one starts.

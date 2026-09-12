@@ -883,3 +883,57 @@ and workflow building
 - **Life in the UK deck total:** 5 cards (unchanged)
 - **Combined total: 146 cards**
 
+
+---
+
+## Day 30 — Saturday 12 September 2026
+
+**Topic:** n8n Sections 3, 4 & 5 — Workflow Planning, AI Fundamentals & LinkedIn Content System
+**Duration:** ~90 minutes
+**Phase:** Phase 2 — AI + Automation
+
+### What I Learned
+
+**Section 3 — AI Fundamentals:**
+- LLMs predict the next word in a sequence; input + output tokens both charged via API
+- Zero-shot prompting = one message → one response (no tools, no iteration)
+- MCP (Model Context Protocol) = USB-C for AI — unified standard for connecting AI to tools
+- AI Agent vs LLM: Agent has tools + iterates; LLM just responds
+- Basic LLM Chain vs AI Agent node — know which to use and when
+
+**Section 3 — Workflow Planning:**
+- Always plan with sticky notes (Shift+S) before touching any nodes
+- Break workflows into trigger → inputs → transformations → outputs
+- Planned CV Processing Workflow: dual triggers → IF (PDF vs image) → OCR/Extract → LLM Chain → Edit Fields → HubSpot
+
+**Section 4 — LinkedIn Content System (Project 10):**
+- Built a 2-workflow system: Workflow 1 (8am generate) + Workflow 2 (9am publish)
+- Google Sheets as content calendar (topic, content, edited_post, approved, status columns)
+- OpenRouter = single API key for all LLMs (GPT, Claude, Gemini)
+- Structured Output Parser forces predictable JSON output from LLM Chain
+- Filter + Loop combo for processing multiple rows one at a time
+- DALL-E 3 for image generation → imgBB for free image hosting → URL stored in Sheets
+- UploadPost community node for LinkedIn posting (easier than native LinkedIn API)
+- Full flow: topic added → AI writes post → image generated → saved as Draft → reviewed → approved → auto-posted
+
+**Section 5 — Style & Refinement (Project 11):**
+- Personal Tone of Voice Playbook → get AI to interview you → generate tone brief + examples
+- Store in Claude Project as knowledge base → AI writes in your voice every time
+- Two documents: (1) Tone of Voice Brief (2) Tone of Voice Examples
+
+### What I Built
+- Planned CV Processing Workflow on n8n canvas with sticky notes
+- Built full LinkedIn Content System (2 workflows, Google Sheets, DALL-E, UploadPost)
+- Created Personal Tone of Voice Brief using Claude
+
+### What Clicked
+- Filter BEFORE loop (not after) — prevents wasting API credits on blank rows
+- Structured Output Parser = predictable data = reliable downstream nodes
+- Two workflows (not one) because you need a manual review window between generation and posting
+- Tone of voice brief is the highest-ROI thing you can do for AI-assisted writing
+
+### Anki Cards
+- **n8n Automation deck:** 25 new cards added (Cards 41–65)
+- **AWS SAA deck total:** 101 cards (unchanged)
+- **Life in the UK deck total:** 5 cards (unchanged)
+- **Combined total: 171 cards**
