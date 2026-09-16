@@ -12,10 +12,10 @@
 | 3 | Workflow Planning & AI Fundamentals | 5 | 30 min | ✅ Done | 12 Sep 2026 |
 | 4 | AI Automation for Social Media — LinkedIn Content System | 11 | 59 min | ✅ Done | 12 Sep 2026 |
 | 5 | Learn Style & Refinement — Getting AI to Write Like You | 1 | 11 min | ✅ Done | 12 Sep 2026 |
-| 6 | Full SEO Content Generation System | 30 | 3h 59 min | ⬜ Not started | — |
+| 6 | Full SEO Content Generation System | 30 | 3h 59 min | ✅ Done | 16 Sep 2026 |
 | 7 | Front-Ends for Automations — Custom AI Dashboards | 22 | 2h 19 min | ⬜ Not started | — |
 
-**Overall: 30 / 76 lectures completed**
+**Overall: 60 / 76 lectures completed**
 
 ---
 
@@ -50,9 +50,11 @@
 - **Project built:** Personal Tone of Voice Brief (Project 11)
 - **Daily log:** [Day 03 — Workflow Planning & AI Fundamentals](./n8n-day-03-workflow-planning-ai-fundamentals.md)
 
-### Section 6 — SEO Content Generation System *(main project)*
-- **Portfolio project:** —
-- **Key learnings:** —
+### Section 6 — Full SEO Content Generation System ✅
+- **Completed:** 16 Sep 2026 | Lectures 6.31–6.60 (30 lectures)
+- **Key learnings:** Reverse engineering SaaS tools, DataForSEO API (keyword research), topic clusters (hub + spoke model), long-tail vs short-tail keywords, ICP Generator workflow, Airtable as V1 front-end + database, 6-workflow architecture, chain-of-thought content planning, Perplexity research agent, Claude/GPT content writing, avoiding keyword cannibalisation, base64 HTTP authentication, modular multi-company design
+- **Project built:** SEO Content Generation System (Project 12) — 6 workflows: ICP Generator → Keyword Research → Subtopic Selection → Content Planning → Research Execution → Content Writing
+- **Daily log:** [Day 04 — SEO Content Generation System](./n8n-day-04-seo-content-generation-system.md)
 
 ### Section 7 — Front-Ends & AI Dashboards
 - **Portfolio project:** —
@@ -69,7 +71,7 @@
 | 3 | 10 (Day 03, cards 41–50) | 50 |
 | 4 | 12 (Day 03, cards 51–62) | 62 |
 | 5 | 3 (Day 03, cards 63–65) | 65 |
-| 6 | — | — |
+| 6 | 25 (Day 04, cards 66–90) | 90 |
 | 7 | — | — |
 
 ---
@@ -80,3 +82,4 @@ Links to daily study log entries for this course:
 - [Day 01 — n8n Intro & Setup](./n8n-day-01-intro-and-setup.md)
 - [Day 02 — 13 Core Nodes & Execution](./n8n-day-02-13-nodes-and-execution.md)
 - [Day 03 — Workflow Planning, AI Fundamentals & LinkedIn Content System](./n8n-day-03-workflow-planning-ai-fundamentals.md)
+- [Day 04 — Full SEO Content Generation System](./n8n-day-04-seo-content-generation-system.md)

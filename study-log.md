@@ -937,3 +937,50 @@ and workflow building
 - **AWS SAA deck total:** 101 cards (unchanged)
 - **Life in the UK deck total:** 5 cards (unchanged)
 - **Combined total: 171 cards**
+
+---
+
+## Day 31 — 16 September 2026
+
+**Topic:** n8n Section 6 — Full SEO Content Generation System
+**Duration:** ~90 minutes
+**Phase:** Phase 2 — AI + Automation
+
+### What I Learned
+
+**Section 6 — SEO Content Generation System (Project 12):**
+- Reverse-engineering SaaS tools: OutRank ($1M/year) is just 6 n8n workflows under a nice UI
+- SEO fundamentals: 93% of users never go past Page 1 of Google — content is the main ranking factor
+- Long-tail vs short-tail keywords: long-tail = low competition, easier to rank for, builds towards short-tail
+- Topic clusters: hub article (seed keyword) + spoke articles (long-tail) — all internally linked to boost SEO
+- Keyword cannibalisation: don't write two articles on the same keyword — they compete against each other
+- DataForSEO API: cheap API for keyword volume, difficulty, related keywords — uses base64 HTTP Basic Auth
+- ICP Generator: n8n workflow that takes a company URL → AI Agent + Perplexity → generates full Ideal Customer Profile
+- Airtable V1 setup: Company table, Keywords table, Blog Content table — Airtable Interface as front-end
+- Modular design: one system handles multiple companies — scalable to a SaaS product or client service
+- Two-model approach: reasoning model for planning (chain-of-thought outline), writing model for creating (Claude/GPT-4o)
+- Content quality: first test got 659 words vs 1,800 target — fixed by passing full plan + previous sections to each write
+- Research agent: Perplexity sonar-pro searches for statistics, examples, citations per article section
+- Writing model: Claude 3.5 Sonnet recommended for creative, long-form quality content
+- Final output: full Markdown article with H2s, tables, bullet points, external citations, internal links
+
+### What I Built
+- Mapped all 6 workflows for the SEO Content Generation System on n8n canvas
+- Configured Airtable base (Company, Keywords, Blog Content tables)
+- Set up DataForSEO API authentication with base64 encoding
+- Built ICP Generator workflow (Webhook → GetRecord → IF → AI Agent → UpdateRecord)
+- Built Keyword Research workflow (Loop → DataForSEO HTTP requests → Aggregate → Update Airtable)
+- Built Content Planning + Research + Writing pipeline with Perplexity + Claude
+
+### What Clicked
+- SaaS tools are just workflows — any product can be reverse-engineered and rebuilt
+- Write in isolation = bad output; pass full context (plan + previous sections) = 1,800+ word article
+- DataForSEO is far cheaper than Semrush/Ahrefs for the same keyword data via API
+- Plan with a reasoning model FIRST, write with a creative model SECOND — always two steps
+- Airtable button → webhook = elegant zero-code trigger from front-end to back-end
+
+### Anki Cards
+- **n8n Automation deck:** 25 new cards added (Cards 66–90)
+- **AWS SAA deck total:** 101 cards (unchanged)
+- **Life in the UK deck total:** 5 cards (unchanged)
+- **Combined total: 196 cards**

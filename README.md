@@ -57,6 +57,8 @@ Active study and course notes — updated after each session.
 | [Day 02 — Anki Cards](./learning-journal/n8n/n8n-day-02-anki-cards.txt) | 20 flashcards (cards 21–40) for Anki import |
 | [Day 03 — Workflow Planning, AI Fundamentals & LinkedIn Content System](./learning-journal/n8n/n8n-day-03-workflow-planning-ai-fundamentals.md) | AI fundamentals, MCP, agents vs LLMs, workflow planning, CV workflow, LinkedIn content system, tone of voice |
 | [Day 03 — Anki Cards](./learning-journal/n8n/n8n-day-03-anki-cards.txt) | 25 flashcards (cards 41–65) for Anki import |
+| [Day 04 — SEO Content Generation System](./learning-journal/n8n/n8n-day-04-seo-content-generation-system.md) | Section 6: reverse-engineering SaaS tools, DataForSEO keyword research, topic clusters, ICP generator, 6-workflow content pipeline, Airtable front-end, AI planning + writing |
+| [Day 04 — Anki Cards](./learning-journal/n8n/n8n-day-04-anki-cards.txt) | 25 flashcards (cards 66–90) for Anki import |
 | [Study Log](./study-log.md) | Daily learning record |
 | [Prompting Notes](./prompting-notes.md) | AI prompt engineering techniques |
 

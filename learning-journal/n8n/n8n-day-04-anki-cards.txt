@@ -1,0 +1,54 @@
+#separator:tab
+#html:false
+#deck:n8n Automation
+#tags:n8n section6 seo day04
+
+What percentage of Google users never go past Page 1 of search results?	93% — which is why SEO visibility is critical for any business
+
+What is "reverse engineering a SaaS" in the context of n8n automation?	Identifying a paid tool's inputs, processing steps, and outputs — then rebuilding those exact steps as n8n workflows without the monthly fees
+
+What are the 6 components of the OutRank-style SEO system built in Section 6?	6 n8n workflows + Airtable database + Airtable Interface (front-end)
+
+What are the V1 and V2 versions of the SEO content system?	V1 = Airtable as database AND front-end interface (no auth); V2 = proper front-end (Lovable/Retool) + Supabase database with user authentication
+
+What does ICP stand for and what are the 5 fields the ICP Generator produces?	Ideal Customer Profile. Fields: (1) Product description (2) Who are the ICP? (3) Pain points/Challenges (4) Key Goals/Objectives (5) How do they currently solve problems?
+
+How does the Airtable "Generate info" button trigger an n8n workflow?	The button sends a webhook request to n8n, passing the Airtable record_id — n8n then reads that record and processes it
+
+What is DataForSEO and what does it provide?	A cheap, readily available API that returns keyword volume, difficulty scores, related keywords, competitor keyword rankings, and more
+
+How do you authenticate with the DataForSEO API in n8n?	Base64 encode "email:password" → use as HTTP Basic Auth header — value format: "Basic <base64_string>" — store as a credential in n8n, not hardcoded
+
+What is a seed keyword vs a long-tail keyword?	Seed keyword = broad topic (e.g. "cars for sale") — high competition. Long-tail = specific phrase (e.g. "red cars under £2000 in Leicester") — low competition, easier to rank for
+
+What is a topic cluster in SEO?	Hub article (targets broad/seed keyword) + spoke articles (each targets a long-tail keyword) — all spokes internally link back to the hub. This structure boosts overall SEO ranking
+
+What are the 4 methods DataForSEO uses to find sub-keywords?	(1) Related keywords (semantic similarity) (2) Keyword suggestions (autocomplete-style) (3) Keyword ideas (broader expansion) (4) Competitor keywords (what rivals rank for)
+
+Why should you UPDATE a Keywords table row rather than CREATE a new one?	The keyword rows already exist with their links to the Company table. Updating enriches existing rows with subtopic data — creating new rows would break the relational links
+
+What is Perplexity sonar-pro used for in this SEO system?	As the research agent tool — it searches the web and returns cited information (statistics, examples, expert quotes) to enrich each section of the blog article
+
+What is the two-model approach for article creation?	Step 1: Use a reasoning/planning model (chain-of-thought) to create a structured outline. Step 2: Use a creative writing model to write the full article following that plan
+
+What happens if you write each article section in isolation (without context)?	Output is disjointed, repetitive, and short — sections may cover the same research and lack narrative flow. Each section must see the full plan AND previously written sections
+
+Why did the first writing test only produce 659 words instead of 1,800?	Sections were written in isolation — the model lacked full context of the article plan and previously written sections, so it underperformed on length and quality
+
+How should you pass context to the writing model to achieve 1,800+ words?	Include the FULL article outline at the start of the prompt + append previously written sections to each new section prompt — the model writes with full continuity like a real writer
+
+What model is recommended for long-form content writing and why?	Claude 3.5 Sonnet — superb reasoning and creative writing ability; GPT-4o is also good (large context, reliable); GPT-4o mini is better for short-form only
+
+What are the 5 quality markers of a good AI-generated blog article?	(1) 1,000+ words (2) Cited with external sources (3) Sounds human — beats AI detectors (4) Includes engaging elements (tables, lists, images) (5) Internally linked to related articles
+
+What is an Airtable Interface and how is it used in the SEO system?	A visual no-code front-end built on top of Airtable tables — users see buttons, forms, and views instead of raw spreadsheet data — used as the V1 front-end for this system
+
+What is the purpose of the Content Planning Workflow (Workflow 4)?	Takes a subtopic + ICP + seed keyword → generates a structured H2 outline with 5–8 sections, key points per section, research questions, and word count targets — BEFORE any writing starts
+
+What does "global article instructions" mean in Airtable and how is it used?	A free-text field in the Company table (e.g. "always include practical examples, use UK spelling") — this is passed into every article prompt to personalise content for that company's brand voice
+
+What are the 5 front-end options evaluated for Version 2 of the SEO system?	(1) Lovable — AI-generated UIs from a chat window (2) Softer — drag-and-drop visual builder (3) Web — visual + code hybrid (4) Retool — internal tools specialist (5) Airtable Interfaces — simple, data-connected
+
+Why does the SEO system need to read existing blog content before generating new articles?	To avoid "keyword cannibalisation" — rewriting articles about keywords you already rank for. The system reads your sitemap to know what has been written and avoids duplicating those topics
+
+What is keyword cannibalisation and why is it a problem?	Writing two articles targeting the same keyword — they compete against each other in Google rankings, splitting authority and reducing the chance either article ranks well
