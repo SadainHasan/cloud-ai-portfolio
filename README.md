@@ -59,6 +59,8 @@ Active study and course notes — updated after each session.
 | [Day 03 — Anki Cards](./learning-journal/n8n/n8n-day-03-anki-cards.txt) | 25 flashcards (cards 41–65) for Anki import |
 | [Day 04 — SEO Content Generation System](./learning-journal/n8n/n8n-day-04-seo-content-generation-system.md) | Section 6: reverse-engineering SaaS tools, DataForSEO keyword research, topic clusters, ICP generator, 6-workflow content pipeline, Airtable front-end, AI planning + writing |
 | [Day 04 — Anki Cards](./learning-journal/n8n/n8n-day-04-anki-cards.txt) | 25 flashcards (cards 66–90) for Anki import |
+| [n8n Node Masterclass](./learning-journal/n8n/n8n-node-masterclass.md) | Complete 30-node reference — settings, ASCII diagrams, examples, 6 workflow patterns, decision tree, recall test |
+| [Why Learn n8n? (AI vs Deep Knowledge)](./learning-journal/n8n/n8n-why-learn-n8n.md) | Honest answer to "if AI can build workflows, why learn the tool?" — the consultant value breakdown |
 | [Study Log](./study-log.md) | Daily learning record |
 | [Prompting Notes](./prompting-notes.md) | AI prompt engineering techniques |
 
