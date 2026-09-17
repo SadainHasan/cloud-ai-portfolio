@@ -984,3 +984,44 @@ and workflow building
 - **AWS SAA deck total:** 101 cards (unchanged)
 - **Life in the UK deck total:** 5 cards (unchanged)
 - **Combined total: 196 cards**
+
+---
+
+## Day 32 — 17 September 2026
+
+**Duration:** ~90 minutes
+**Phase:** Phase 2 — AI + Automation
+
+### What I Learned
+
+**Deep-dive: n8n Node Masterclass (standalone reference document)**
+- Covered all 30 nodes that handle 95%+ of real-world automations in depth
+- Trigger nodes: Manual, Schedule (cron syntax), Webhook (test vs production URL), Error Trigger, Form Trigger
+- Flow control: IF vs Switch vs Filter (critical differences), Merge modes (Append / By Index / By Key), Split Out vs Split In Batches (key distinction)
+- Data nodes: Edit Fields expressions (`{{ $json.field }}`, `??` null-safe defaults), Code node structure (must always `return items`)
+- Integration: HTTP Request (cURL import trick, Header Auth security rule — NEVER hardcode credentials), Airtable operations, Respond to Webhook
+- AI nodes: Agent vs Basic LM Chain, Chat Model temperature guide, Structured Output Parser purpose, Memory session IDs
+- 6 workflow patterns: Trigger→Enrich→Store, Schedule→Fetch→Report, Array→Split→Loop→Collect→Write, AI Pipeline (Plan→Research→Write), Webhook API, Error Handling
+- Decision tree: "I need X — which node?" covering 20 real scenarios
+
+**Strategic question answered: Why learn n8n when AI can generate workflows?**
+- AI generates ~70% of a workflow — but the remaining 30% (debugging, client-specific adaptation, architecture design, production reliability) requires deep knowledge
+- The "vibe coding" trap: works on simple tasks, collapses the moment complexity exceeds AI's reliable output
+- Consultant value is NOT in clicking nodes — it's in diagnosing the problem, designing the architecture, debugging failures, explaining to clients, and ongoing support
+- AI is a productivity multiplier; knowledge is the switch that makes it work
+- Market reality: commodity automations (3–5 nodes) will shrink; complex AI-integrated systems (what SME consultants build) are growing in value
+
+### What I Built / Created
+- `n8n-node-masterclass.md` — 1,936-line complete reference covering all 30 nodes with ASCII diagrams, settings tables, real examples, 6 workflow patterns, decision tree, 15-question recall test
+- `n8n-why-learn-n8n.md` — 198-line document answering the AI vs deep knowledge question honestly; permanent reference for motivation or client conversations
+- README updated: linked both new documents in Learning Journal section
+
+### What Clicked
+- Split Out and Split In Batches look similar but are completely different: Split Out turns an ARRAY into items; Split In Batches LOOPS through existing items with control
+- IF node = 2 outputs (both paths continue); Filter node = 1 output (non-matching items are deleted)
+- Merge By Index zips two lists positionally; Merge By Key does a SQL-style join by a matching field
+- AI can generate a workflow — but only someone who understands the tool can evaluate whether it's correct, fix it when it's not, and adapt it to a real client's messy requirements
+
+### Anki Cards
+- **n8n Automation deck:** No new cards today (conceptual/reference day)
+- **Combined total: 196 cards** (unchanged)
